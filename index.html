@@ -331,8 +331,9 @@
   /* ---- Game screen: true full-viewport, breaks out of the kanga frame ---- */
   .game-fullscreen{ position: fixed; inset: 0; z-index: 100; display: none; background: var(--ocean-dark); }
   .game-fullscreen.active{ display: block; }
-  .game-bg{ position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-  .game-bg img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  img{ -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
+  .game-bg{ position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .game-bg img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
   .game-bg .scene-fallback{ position: absolute; inset: 0; width: 100%; height: 100%; }
   .game-bg .scene-fallback svg{ width: 100%; height: 100%; display: block; }
   .game-overlay{
