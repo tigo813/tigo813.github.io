@@ -38,7 +38,8 @@
     --gold: #D9A441;
     --ink: #22303C;
   }
-  *{ box-sizing: border-box; }
+  *{ box-sizing: border-box; -webkit-touch-callout: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; -webkit-tap-highlight-color: transparent !important; }
+  button, a, [role="button"]{ -webkit-touch-callout: none !important; -webkit-user-select: none !important; user-select: none !important; touch-action: manipulation; }
   html, body{
     margin: 0; min-height: 100%; background: var(--ocean-dark);
     font-family: 'Work Sans', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: var(--ink);
@@ -185,6 +186,35 @@
   .confirm-box .confirm-title{ font-family: 'Fraunces', Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Noto Serif', serif; font-weight: 700; font-size: 18px; color: var(--ocean-dark); margin-bottom: 18px; }
   .confirm-box .confirm-actions{ display: flex; gap: 10px; }
   .confirm-box .confirm-actions .ctrl-btn{ flex: 1; }
+
+  .tutorial-overlay{
+    position: fixed; inset: 0; z-index: 950;
+    background: rgba(7,51,56,0.88);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; box-sizing: border-box;
+  }
+  .tutorial-box{
+    background: var(--sand); border-radius: 20px; padding: 26px 22px;
+    max-width: 320px; width: 100%; text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: tutorialPop 0.35s ease;
+  }
+  @keyframes tutorialPop{
+    0%{ transform: scale(0.85); opacity: 0; }
+    100%{ transform: scale(1); opacity: 1; }
+  }
+  .tutorial-icon{ font-size: 42px; margin-bottom: 10px; animation: tutorialFinger 1.4s ease-in-out infinite; }
+  @keyframes tutorialFinger{
+    0%,100%{ transform: translate(-10px,-6px) rotate(-8deg); }
+    50%{ transform: translate(10px,6px) rotate(8deg); }
+  }
+  .tutorial-title{ font-family: 'Fraunces', Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Noto Serif', serif; font-weight: 700; font-size: 19px; color: var(--ocean-dark); margin-bottom: 10px; }
+  .tutorial-text{ font-size: 14px; color: #5a5044; line-height: 1.5; margin-bottom: 8px; }
+  .tutorial-text b{ color: var(--kanga-red); }
+  .tutorial-steps{ text-align: left; margin: 14px 0; padding: 0; list-style: none; }
+  .tutorial-steps li{ font-size: 13px; color: var(--ocean-dark); margin-bottom: 8px; padding-left: 26px; position: relative; }
+  .tutorial-steps li::before{ content: attr(data-num); position: absolute; left: 0; top: -1px; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); color: var(--ocean-dark); font-weight: 700; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+  .tutorial-box .ctrl-btn{ width: 100%; margin-top: 6px; background: var(--ocean); color: #fff; border-color: var(--ocean); font-size: 15px; padding: 12px; }
 
   header{ text-align: center; margin-bottom: 16px; }
   .eyebrow{ font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--kanga-red); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; }
@@ -572,7 +602,7 @@ setMethali();
 /* Tries window.storage first (available inside Claude.ai previews).
    Falls back to localStorage automatically once this file runs standalone
    (e.g. packaged as an Android app) — so progress always persists. */
-const DEFAULT_PROGRESS = { soundOn: true, completed: {}, streak: 0, lastPlayDate: null, giftClaimedDate: null };
+const DEFAULT_PROGRESS = { soundOn: true, completed: {}, streak: 0, lastPlayDate: null, giftClaimedDate: null, tutorialSeen: false };
 
 async function loadProgress(){
   let loaded = null;
@@ -1689,6 +1719,33 @@ function renderGame(){
   layoutWheel();
   attachWheelEvents();
   fadeInEl(gameFullscreen.querySelector(".game-inner"));
+  maybeShowTutorial();
+}
+
+function maybeShowTutorial(){
+  if(progress.tutorialSeen) return;
+  const overlay = document.createElement("div");
+  overlay.className = "tutorial-overlay";
+  overlay.innerHTML = `
+    <div class="tutorial-box">
+      <div class="tutorial-icon">👆</div>
+      <div class="tutorial-title">Karibu kwenye Neno!</div>
+      <div class="tutorial-text">Jinsi ya kucheza ni rahisi:</div>
+      <ul class="tutorial-steps">
+        <li data-num="1">Gusa herufi ya kwanza ya neno, kisha <b>buruta</b> kidole chako kupitia herufi zinazofuata bila kuinua.</li>
+        <li data-num="2">Achilia kidole chako ukimaliza neno — likiwa sahihi litajaza kwenye ubao.</li>
+        <li data-num="3">Tafuta maneno yote ili ukamilishe kiwango na ufungue kinachofuata!</li>
+      </ul>
+      <button class="ctrl-btn" id="tutorialGotIt">Nimeelewa, twende! 🎮</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  overlay.querySelector("#tutorialGotIt").addEventListener("click", () => {
+    sfxTap();
+    overlay.remove();
+    progress.tutorialSeen = true;
+    saveProgress();
+  });
 }
 
 function fillFoundWords(){
@@ -2059,6 +2116,15 @@ function renderEndScreen(stars){
     sfxTap(); gameFullscreen.classList.remove("active"); gameFullscreen.innerHTML = ""; renderLevelMap(gameState.wIdx);
   });
   fadeInEl(gameFullscreen.querySelector(".end-screen"));
+}
+
+/* ================= SERVICE WORKER (internetsiz çalışma) ================= */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch((err) => {
+      console.warn("Service Worker kaydı başarısız:", err);
+    });
+  });
 }
 
 /* ================= INIT ================= */
