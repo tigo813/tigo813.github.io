@@ -1,4 +1,4 @@
-const CACHE_NAME = "neno-cache-v2";
+const CACHE_NAME = "neno-cache-v3";
 const PRECACHE_URLS = [
   "/",
   "/index.html",
@@ -15,7 +15,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Etkinleştirme: eski önbellek sürümlerini (v1 dahil) temizle
+// Etkinleştirme: eski önbellek sürümlerini (v1, v2 dahil) temizle
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -27,13 +27,13 @@ self.addEventListener("activate", (event) => {
 
 // İstekleri karşıla: ÖNCE İNTERNETTEN dene (güncel sürümü almak için),
 // internet yoksa/başarısız olursa önbellekten göster.
-// Bu, "yeni sürüm yükledim ama oyun değişmedi" sorununu çözer —
-// eski (v1) tasarım hep önbellekten gösteriyordu, hiç güncellemeyi
-// kontrol etmiyordu.
+// "cache: no-store" ekledik — bu, tarayıcının kendi (Service Worker'dan
+// bağımsız) HTTP önbelleğini de atlamasını garantiliyor, gerçekten
+// sunucudan taze veri çeker.
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-store" })
       .then((response) => {
         if (response && response.status === 200) {
           const clone = response.clone();
