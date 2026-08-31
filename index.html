@@ -1447,8 +1447,8 @@ function renderWorldMap(){
       <div class="world-node-name">${w.name || w.id}</div>
     `;
     if(unlocked){
-      node.addEventListener("pointerdown", () => sfxSelectTap());
       node.addEventListener("click", () => {
+        sfxSelectTap();
         wmf.classList.remove("active"); wmf.innerHTML = ""; renderLevelMap(i);
       });
     }
@@ -1521,8 +1521,7 @@ function renderLevelMap(wIdx){
       </div>
     `;
     if(unlocked){
-      node.addEventListener("pointerdown", () => sfxSelectTap());
-      node.addEventListener("click", () => { startLevel(wIdx, i); });
+      node.addEventListener("click", () => { sfxSelectTap(); startLevel(wIdx, i); });
     }
     path.appendChild(node);
   });
