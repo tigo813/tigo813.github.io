@@ -1,21 +1,23 @@
-const CACHE_NAME = "neno-cache-v4";
+const CACHE_NAME = "neno-cache-v5";
 const PRECACHE_URLS = [
-  "/",
-  "/index.html",
   "/manifest.json",
   "/icon-192.png",
   "/icon-512.png"
 ];
-
-// Kurulum: oyunun ana dosyalarını cihaza önceden kaydet
+// Kurulum: sadece KÜÇÜK dosyaları önceden kaydet (manifest, ikonlar).
+// index.html (~20MB) kurulum anında zorla önbelleğe alınmaya çalışılırsa
+// yavaş/dengesiz bağlantıda veya kısıtlı depolamada başarısız olabilir,
+// bu da service worker kurulumunun yarım kalmasına ve bir sonraki
+// açılışta oyunun hiç açılmamasına sebep olabilir. Bunun yerine
+// index.html, aşağıdaki "fetch" olayı sırasında doğal olarak önbelleğe
+// alınır (ilk gerçek ziyarette).
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS)).catch(() => {})
   );
 });
-
-// Etkinleştirme: eski önbellek sürümlerini (v1, v2, v3 dahil) temizle
+// Etkinleştirme: eski önbellek sürümlerini (v1, v2, v3, v4 dahil) temizle
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -24,7 +26,6 @@ self.addEventListener("activate", (event) => {
   );
   self.clients.claim();
 });
-
 // İstekleri karşıla: ÖNCE ÖNBELLEKTEN hemen göster (uygulama anında açılsın),
 // AYNI ANDA arka planda internetten güncel sürümü indirip önbelleği
 // sessizce yeniler ("stale-while-revalidate"). Böylece:
@@ -35,23 +36,21 @@ self.addEventListener("activate", (event) => {
 //    ilk açılış) normal şekilde internetten çekilir
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
-
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) =>
       cache.match(event.request).then((cachedResponse) => {
         const networkFetch = fetch(event.request, { cache: "no-store" })
           .then((networkResponse) => {
             if (networkResponse && networkResponse.ok) {
-              cache.put(event.request, networkResponse.clone());
+              cache.put(event.request, networkResponse.clone()).catch(() => {});
             }
             return networkResponse;
           })
           .catch(() => null);
-
         // Önbellekte varsa hemen onu döndür, güncelleme arka planda devam eder.
         // Önbellekte yoksa (ilk açılış), internetin gelmesini bekle.
         return cachedResponse || networkFetch;
       })
-    )
+    ).catch(() => fetch(event.request))
   );
 });
