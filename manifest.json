@@ -1,8 +1,8 @@
 {
   "short_name": "Neno",
   "name": "Neno App",
-  "display": "standalone",
-  "start_url": "/",
+  "display": "fullscreen",
+  "start_url": "./index.html",
   "theme_color": "#000000",
   "background_color": "#000000",
   "orientation": "portrait",
