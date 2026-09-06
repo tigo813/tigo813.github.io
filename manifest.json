@@ -4,15 +4,14 @@
   "description": "Gurudumu la maneno la Kiswahili — jifunze, fikiri, shinda!",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "id": "/",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
   "orientation": "portrait",
   "background_color": "#0D5C63",
   "theme_color": "#B3373A",
   "lang": "sw",
-  "categories": [
-    "games",
-    "education"
-  ],
+  "categories": ["games", "education"],
   "icons": [
     {
       "src": "icon-192.png",
