@@ -2210,22 +2210,27 @@ document.addEventListener("dragstart", (e) => { e.preventDefault(); }, { passive
 /* ================= AUTO FULLSCREEN (tarayıcıda ilk dokunuşta tam ekrana geç) ================= */
 (function(){
   // Standalone/TWA (kurulu uygulama) modunda zaten tam ekran benzeri çalışıyor, tarayıcı Fullscreen API'sine gerek yok.
-  const isStandalone = window.matchMedia("(display-mode: standalone)").matches
-    || window.matchMedia("(display-mode: fullscreen)").matches
-    || window.navigator.standalone === true;
-  if (isStandalone) return;
-
   function requestFS(){
     const el = document.documentElement;
     const req = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-    if (req) {
+    const isFS = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    if (req && !isFS) {
       req.call(el).catch(() => {});
     }
-    document.removeEventListener("click", requestFS);
-    document.removeEventListener("touchend", requestFS);
   }
-  document.addEventListener("click", requestFS, { once: true });
-  document.addEventListener("touchend", requestFS, { once: true });
+  // İlk yüklemede dene (tarayıcı politikası izin veriyorsa)
+  requestFS();
+  // Her dokunuş/tıklamada tekrar dene — tam ekrandan çıkılmışsa hemen geri kilitler
+  document.addEventListener("click", requestFS);
+  document.addEventListener("touchend", requestFS);
+  // Tam ekrandan çıkılırsa (kullanıcı hareketi, sistem UI, vb.) anında tekrar iste
+  ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach((evt) => {
+    document.addEventListener(evt, () => { setTimeout(requestFS, 50); });
+  });
+  // Uygulama arka plandan öne gelince de tekrar dene
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") setTimeout(requestFS, 50);
+  });
 })();
 
 /* ================= INIT ================= */
