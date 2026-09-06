@@ -2,7 +2,7 @@
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Neno — Mchezo wa Maneno kwa Kiswahili</title>
 <meta name="description" content="Gurudumu la maneno la Kiswahili — jifunze, fikiri, shinda!">
 <meta name="theme-color" content="#B3373A">
@@ -49,6 +49,10 @@ body{
     -webkit-user-select: none;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -2221,15 +2225,14 @@ document.addEventListener("dragstart", (e) => { e.preventDefault(); }, { passive
   // İlk yüklemede dene (tarayıcı politikası izin veriyorsa)
   requestFS();
   // Her dokunuş/tıklamada tekrar dene — tam ekrandan çıkılmışsa hemen geri kilitler
+  // NOT: fullscreenchange olayına bağlı otomatik kilitleme kasıtlı olarak eklenmedi —
+  // bu, sistemin GERİ TUŞUNU işlemesini engelliyordu (geri tuşu önce tam ekrandan
+  // çıkarıyor, biz hemen geri kilitleyince asıl geri gitme işlemi hiç tamamlanamıyordu).
   document.addEventListener("click", requestFS);
   document.addEventListener("touchend", requestFS);
-  // Tam ekrandan çıkılırsa (kullanıcı hareketi, sistem UI, vb.) anında tekrar iste
-  ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach((evt) => {
-    document.addEventListener(evt, () => { setTimeout(requestFS, 50); });
-  });
-  // Uygulama arka plandan öne gelince de tekrar dene
+  // Uygulama arka plandan öne gelince tekrar dene (bu, geri tuşuyla karışmaz)
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") setTimeout(requestFS, 50);
+    if (document.visibilityState === "visible") setTimeout(requestFS, 300);
   });
 })();
 
