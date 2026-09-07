@@ -7,12 +7,16 @@
     html, body {
         margin: 0 !important;
         padding: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
+        width: 100vw !important;
+        height: 100vh !important;
         overflow: hidden !important;
         position: fixed !important;
-        background-color: #000000 !important; /* Ekran barları gizlenince arkada beyazlık kalmasın */
-        touch-action: none; /* Yanlışlıkla ekranı kaydırmayı önler */
+        top: 0 !important;
+        left: 0 !important;
+        background-color: #000000 !important; /* Avoid white flash behind hidden system bars */
+        touch-action: none; /* Prevent accidental page scroll/zoom gestures */
+        -webkit-user-select: none;
+        user-select: none;
     }
 </style>
 <title>Neno — Mchezo wa Maneno kwa Kiswahili</title>
