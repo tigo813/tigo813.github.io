@@ -14,7 +14,7 @@
         top: 0 !important;
         left: 0 !important;
         background-color: #000000 !important; /* Avoid white flash behind hidden system bars */
-        touch-action: none; /* Prevent accidental page scroll/zoom gestures */
+        touch-action: pan-y; /* Allow vertical scroll gestures to reach inner scrollable containers; horizontal/zoom still blocked */
         -webkit-user-select: none;
         user-select: none;
     }
