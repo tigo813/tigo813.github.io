@@ -1,1 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.tigo813.nenowordgame" version="1.0.0" xmlns="http://apache.org">
+    <name>Neno Word Game</name>
+    <description>Native Fullscreen Swahili Word Puzzle Game</description>
+    <author email="developer@tigo813.com">tigo813</author>
+    <content src="index.html" />
+    
+    <!-- Android Native Immersive Configuration (Removes URL Bar & Status Bar) -->
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="BackgroundColor" value="#000000" />
+    
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+</widget>
 
