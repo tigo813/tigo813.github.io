@@ -1,4 +1,4 @@
-const CACHE_NAME = "neno-cache-v3";
+const CACHE_NAME = "neno-cache-v1";
 const PRECACHE_URLS = [
   "/",
   "/index.html",
@@ -7,7 +7,6 @@ const PRECACHE_URLS = [
   "/icon-512.png"
 ];
 
-// Kurulum: oyunun ana dosyalarını cihaza önceden kaydet
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
@@ -15,7 +14,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Etkinleştirme: eski önbellek sürümlerini (v1, v2 dahil) temizle
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -25,31 +23,24 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// İstekleri karşıla: ÖNCE İNTERNETTEN dene (güncel sürümü almak için),
-// internet yoksa/başarısız olursa önbellekten göster.
-// "cache: no-store" ekledik — bu, tarayıcının kendi (Service Worker'dan
-// bağımsız) HTTP önbelleğini de atlamasını garantiliyor, gerçekten
-// sunucudan taze veri çeker.
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   event.respondWith(
-    fetch(event.request, { cache: "no-store" })
-      .then((response) => {
-        if (response && response.status === 200) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        }
-        return response;
-      })
-      .catch(() => {
-        return caches.match(event.request).then((cached) => {
-          if (cached) return cached;
-          // İnternet yok ve önbellekte de yoksa, sayfa açma isteklerinde
-          // en azından ana oyun dosyasını göster
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => {
           if (event.request.mode === "navigate") {
             return caches.match("/index.html");
           }
         });
-      })
+    })
   );
 });
