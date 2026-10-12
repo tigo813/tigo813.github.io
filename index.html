@@ -1150,6 +1150,7 @@
   }
   .game-fullscreen .board-zone .crossword-grid{ margin:0; }
 
+.hub::after{ content:"v19-1235"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
 /* ===== v19: profesyonel kelime ızgarası (tek tasarım sistemi) ===== */
 #gameFullscreen{
   --tile-radius:20%;
@@ -1170,9 +1171,9 @@
   border:var(--bw) solid var(--g-edge);
   padding:0 0 calc(var(--cell-u) * .05) 0;         /* harf üst yüzeyde ortalı */
   color:var(--g-ink);
-  font-family:var(--tile-font); font-weight:800; line-height:1; letter-spacing:0;
+  font-family:var(--tile-font); font-weight:900; line-height:1; letter-spacing:0;
   display:flex; align-items:center; justify-content:center; text-align:center;
-  text-shadow:0 1px 0 var(--g-ink-shadow); -webkit-text-stroke:0;
+  text-shadow:0 1px 0 var(--g-ink-shadow); -webkit-text-stroke:.035em currentColor; paint-order:stroke fill;
   background:linear-gradient(180deg,var(--g-hi) 0%,var(--g-main) 42%,var(--g-mid) 100%) !important;
   /* ışık sol üstten: üst/sol parlak, alt/sağ koyu */
   box-shadow:
@@ -1197,7 +1198,7 @@
 #gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.hero.filled{ color:var(--g-ink); }
 /* ipucu harfi: krem yüzey, kahverengi harf, altın kenar + hafif parlama */
 #gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.hinted{
-  border-color:var(--c-edge) !important; color:var(--c-ink) !important; text-shadow:none; font-weight:800;
+  border-color:var(--c-edge) !important; color:var(--c-ink) !important; text-shadow:none; font-weight:900;
   background:linear-gradient(180deg,var(--c-hi) 0%,var(--c-main) 100%) !important;
   box-shadow:
     inset calc(var(--cell-u)*.02) calc(var(--cell-u)*.03) 0 rgba(255,255,255,.85),
@@ -1234,7 +1235,7 @@
 #gameFullscreen .word-row{ gap:calc(var(--rw,54px) * .065); justify-content:center; --cell:var(--rw,54px); }
 #gameFullscreen .word-rows{ --rw:min(54px, calc((100vw - 56px) / var(--wn,5) / 1.065)); }
 #gameFullscreen .word-row .letter-box{
-  width:var(--rw,54px); height:var(--rw,54px); flex:0 0 auto; font-size:calc(var(--rw,54px) * .46);
+  width:var(--rw,54px); height:var(--rw,54px); flex:0 0 auto; font-size:calc(var(--rw,54px) * .58);
 }
 </style>
 
@@ -2274,7 +2275,7 @@ function gridCellSize(cols, rows){
   let cell = Math.min(cellW, cellH);
   cell = Math.max(GRID_MIN_CELL, Math.min(64, cell));   // en az 36px: insanlar harfleri rahat görsün; sığmazsa tahta kaydırılır
   const gap = cell <= 14 ? 1 : (cols > 10 || rows > 10 ? 2 : (cols > 7 || rows > 7 ? 4 : 6));
-  const font = Math.max(8, Math.round(cell * 0.46));
+  const font = Math.max(8, Math.round(cell * 0.58));
   return { cell, gap, font };
 }
 
@@ -2802,7 +2803,7 @@ function fitGrid(){
   grid.style.gridTemplateRows = `repeat(${rows}, ${cell}px)`;
   grid.style.gap = gap + "px";
   grid.style.setProperty("--cell", cell + "px");
-  const font = Math.max(8, Math.round(cell * 0.46));
+  const font = Math.max(8, Math.round(cell * 0.58));
   grid.querySelectorAll(".letter-box").forEach(el => { el.style.fontSize = font + "px"; });
   return cell;
 }
@@ -3224,6 +3225,19 @@ function renderEndScreen(stars){
   });
   fadeInEl(gameFullscreen.querySelector(".end-screen"));
 }
+
+/* ================= SÜRÜM DAMGASI + ESKİ ÖNBELLEĞİ BİR KEZ TEMİZLE ================= */
+const NENO_BUILD = "v19-1235";
+try{
+  if(localStorage.getItem("neno_build") !== NENO_BUILD){
+    localStorage.setItem("neno_build", NENO_BUILD);              // döngüyü önle: önce yaz
+    const _done = () => { try{ location.reload(); }catch(e){} };
+    const _p = [];
+    if(window.caches && caches.keys) _p.push(caches.keys().then(ks => Promise.all(ks.map(k => caches.delete(k)))));
+    if(navigator.serviceWorker && navigator.serviceWorker.getRegistrations) _p.push(navigator.serviceWorker.getRegistrations().then(rs => Promise.all(rs.map(r => r.unregister()))));
+    if(_p.length) Promise.all(_p).then(_done, _done);
+  }
+}catch(e){}
 
 /* ================= SERVICE WORKER (internetsiz çalışma) ================= */
 if ("serviceWorker" in navigator) {
