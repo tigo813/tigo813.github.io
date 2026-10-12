@@ -1161,7 +1161,7 @@
   --c-main:#FFF3D6; --c-hi:#FFFCF1; --c-edge:#E8B84C; --c-depth:#B9822E; --c-ink:#49301B;
   --glow-sel:rgba(214,235,60,.75);
 }
-#gameFullscreen #crosswordGrid .letter-box{
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box{
   --cell-u:var(--cell,40px);
   --bw:clamp(1px, calc(var(--cell-u) * .035), 2.5px);
   --dp:calc(var(--cell-u) * .06);                 /* alt derinlik %6 */
@@ -1184,7 +1184,7 @@
   -webkit-tap-highlight-color:transparent; will-change:auto;
 }
 /* boş / özel kutu: krem */
-#gameFullscreen #crosswordGrid .letter-box:not(.filled):not(.hinted){
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box:not(.filled):not(.hinted){
   border-color:var(--c-edge); color:var(--c-ink); text-shadow:none;
   background:linear-gradient(180deg,var(--c-hi) 0%,var(--c-main) 100%) !important;
   box-shadow:
@@ -1193,10 +1193,10 @@
     inset 0 calc(var(--dp) * -1) 0 var(--c-depth),
     0 calc(var(--cell-u)*.06) calc(var(--cell-u)*.08) rgba(0,28,0,.26) !important;
 }
-#gameFullscreen #crosswordGrid .letter-box.filled,
-#gameFullscreen #crosswordGrid .letter-box.hero.filled{ color:var(--g-ink); }
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.filled,
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.hero.filled{ color:var(--g-ink); }
 /* ipucu harfi: krem yüzey, kahverengi harf, altın kenar + hafif parlama */
-#gameFullscreen #crosswordGrid .letter-box.hinted{
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.hinted{
   border-color:var(--c-edge) !important; color:var(--c-ink) !important; text-shadow:none; font-weight:800;
   background:linear-gradient(180deg,var(--c-hi) 0%,var(--c-main) 100%) !important;
   box-shadow:
@@ -1207,7 +1207,7 @@
     0 calc(var(--cell-u)*.06) calc(var(--cell-u)*.08) rgba(0,28,0,.22) !important;
 }
 /* seçili: kısa aydınlanma + altın-yeşil parlama + %4 büyüme */
-#gameFullscreen #crosswordGrid .letter-box.selected.selected.selected{
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box.selected.selected.selected{
   transform:scale(1.04); filter:brightness(1.06);
   box-shadow:
     inset calc(var(--cell-u)*.02) calc(var(--cell-u)*.03) 0 rgba(255,255,255,.7),
@@ -1215,7 +1215,7 @@
     0 0 calc(var(--cell-u)*.2) calc(var(--cell-u)*.02) var(--glow-sel) !important;
 }
 /* basma hissi */
-#gameFullscreen #crosswordGrid .letter-box:active{ transform:scale(.96); }
+#gameFullscreen :is(#crosswordGrid, .word-row) .letter-box:active{ transform:scale(.96); }
 /* doğru kelime: kısa parlama + hafif zıplama, hemen sakinleşir */
 @keyframes cellPopAnim{
   0%{ transform:translateY(0) scale(1); }
@@ -1224,11 +1224,18 @@
   62%{ transform:translateY(1%) scale(.98); }
   100%{ transform:translateY(0) scale(1); }
 }
-#gameFullscreen #crosswordGrid .cell-pop{ animation:cellPopAnim .38s ease-out; }
+#gameFullscreen :is(#crosswordGrid, .word-row) .cell-pop{ animation:cellPopAnim .38s ease-out; }
 /* yanlış: kısa, hafif yatay sarsılma (kırmızı yok) */
 @keyframes gridNudge{ 0%,100%{ transform:translateX(0); } 25%{ transform:translateX(-4px); } 50%{ transform:translateX(3px); } 75%{ transform:translateX(-2px); } }
-#gameFullscreen #crosswordGrid.nudge{ animation:gridNudge .28s ease; }
+#gameFullscreen #crosswordGrid.nudge, #gameFullscreen .word-rows.nudge{ animation:gridNudge .28s ease; }
 @keyframes shake{ 0%,100%{ transform:translateX(0); } 25%{ transform:translateX(-4px); } 50%{ transform:translateX(3px); } 75%{ transform:translateX(-2px); } }
+
+/* kelime satırları (ızgarasız seviyeler): aynı kutu, kareye yakın */
+#gameFullscreen .word-row{ gap:calc(var(--rw,54px) * .065); justify-content:center; --cell:var(--rw,54px); }
+#gameFullscreen .word-rows{ --rw:min(54px, calc((100vw - 56px) / var(--wn,5) / 1.065)); }
+#gameFullscreen .word-row .letter-box{
+  width:var(--rw,54px); height:var(--rw,54px); flex:0 0 auto; font-size:calc(var(--rw,54px) * .46);
+}
 </style>
 
 <div class="stage">
@@ -2303,7 +2310,7 @@ function renderGame(){
     boardHtml = `<div class="crossword-grid" id="crosswordGrid" style="grid-template-columns: repeat(${g.cols}, ${cell}px); grid-template-rows: repeat(${g.rows}, ${cell}px); gap:${gap}px;">${cells}</div>`;
   } else {
     boardHtml = `
-      <div class="word-rows" id="wordRows">
+      <div class="word-rows" id="wordRows" style="--wn:${Math.max(4, ...sortedWords.map(w => [...w].length))}">
         ${sortedWords.map(w => `
           <div class="word-row ${w === level.hero ? 'hero' : ''}" data-word="${w}">
             ${[...w].map(() => `<div class="letter-box"></div>`).join("")}
