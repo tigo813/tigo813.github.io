@@ -1,10 +1,10 @@
-// Neno servis çalışanı (v5)
+// Neno servis çalışanı (v6)
 // Amaçlar:
 //  1) Oyun ikinci açılıştan itibaren ANINDA açılsın (ana dosya cihazda saklı)
 //  2) Mobil veri HARCANMASIN: her açılışta 14 MB'lık dosyayı yeniden indirmek yerine
 //     sadece küçük bir "değişti mi?" sorusu (HEAD) sorulur. Dosya gerçekten
 //     değiştiyse yalnızca o zaman, arka planda, BİR KEZ indirilir.
-const CACHE_NAME = "neno-cache-v5";
+const CACHE_NAME = "neno-cache-v6";
 const DOC_KEY = "/index.html";           // ana oyun dosyası tek bir anahtarla saklanır
 const SMALL_URLS = ["/manifest.json", "/icon-192.png", "/icon-512.png"];
 const META_KEY = "/__neno_meta";         // son güncelleme zamanını tutar
@@ -47,7 +47,23 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Diğer küçük dosyalar: önce önbellek, yoksa ağ
+  // Arka plan listesi (bg/liste.json): önce ağ (yeni fotoğraflar hemen görünsün), ağ yoksa önbellek
+  if (url.pathname.endsWith("/bg/liste.json")) {
+    event.respondWith(
+      fetch(req, { cache: "no-store" }).then((res) => {
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(req, copy));
+        }
+        return res;
+      }).catch(() => caches.match(req).then((hit) => hit || new Response("{}", {
+        headers: { "Content-Type": "application/json" }
+      })))
+    );
+    return;
+  }
+
+  // Diğer küçük dosyalar (bg/ fotoğrafları dahil): önce önbellek, yoksa ağ
   event.respondWith(
     caches.match(req).then((hit) =>
       hit || fetch(req).then((res) => {
