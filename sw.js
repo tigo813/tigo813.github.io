@@ -1,12 +1,13 @@
-// Neno servis çalışanı (v6)
+// Neno servis çalışanı (v7)
 // Amaçlar:
 //  1) Oyun ikinci açılıştan itibaren ANINDA açılsın (ana dosya cihazda saklı)
 //  2) Mobil veri HARCANMASIN: her açılışta 14 MB'lık dosyayı yeniden indirmek yerine
 //     sadece küçük bir "değişti mi?" sorusu (HEAD) sorulur. Dosya gerçekten
 //     değiştiyse yalnızca o zaman, arka planda, BİR KEZ indirilir.
-const CACHE_NAME = "neno-cache-v6";
+const CACHE_NAME = "neno-cache-v7";
 const DOC_KEY = "/index.html";           // ana oyun dosyası tek bir anahtarla saklanır
 const SMALL_URLS = ["/manifest.json", "/icon-192.png", "/icon-512.png"];
+const FIRST_BGS = ["/bg/g001.webp", "/bg/g002.webp", "/bg/g003.webp", "/bg/g004.webp", "/bg/g005.webp", "/bg/g006.webp", "/bg/g007.webp", "/bg/g008.webp", "/bg/g009.webp", "/bg/g010.webp", "/bg/g011.webp", "/bg/g012.webp", "/bg/g013.webp", "/bg/g014.webp", "/bg/g033.webp", "/bg/g034.webp", "/bg/g035.webp", "/bg/g036.webp", "/bg/g037.webp", "/bg/g038.webp", "/bg/g039.webp", "/bg/g040.webp", "/bg/g041.webp", "/bg/g042.webp", "/bg/g043.webp", "/bg/g044.webp", "/bg/g045.webp", "/bg/g046.webp", "/bg/g060.webp", "/bg/g061.webp", "/bg/g062.webp", "/bg/g063.webp", "/bg/g064.webp", "/bg/g065.webp", "/bg/g066.webp", "/bg/g067.webp", "/bg/g068.webp", "/bg/g069.webp", "/bg/g070.webp", "/bg/g071.webp", "/bg/g072.webp", "/bg/g073.webp"];   // ilk bölümlerin arka planları: çevrimdışı ilk açılış için önden saklanır
 const META_KEY = "/__neno_meta";         // son güncelleme zamanını tutar
 const MIN_RECHECK_MS = 30 * 60 * 1000;   // en az 30 dk arayla tam indirme
 
@@ -16,6 +17,8 @@ self.addEventListener("install", (event) => {
     const cache = await caches.open(CACHE_NAME);
     // Küçük dosyalar: biri eksik olsa bile kurulum bozulmasın
     await Promise.all(SMALL_URLS.map((u) => cache.add(u).catch(() => {})));
+    // İlk arka planlar (biri inmezse kurulum bozulmasın)
+    await Promise.all(FIRST_BGS.map((u) => cache.add(u).catch(() => {})));
     // Ana dosya: sayfa az önce indirildiği için tarayıcı önbelleğinden alınır
     try {
       const res = await fetch("/", { cache: "force-cache" });
