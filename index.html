@@ -1155,7 +1155,7 @@
   }
   .game-fullscreen .board-zone .crossword-grid{ margin:0; }
 
-.hub::after{ content:"v19-1550"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
+.hub::after{ content:"v19-1560"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
 /* ===== karıştır düğmesi: çember dışında (sağ alt köşe), harf seçimini engellemez ===== */
 #gameFullscreen #shuffleBtn.wheel-mini-btn{
   left:auto; top:auto; right:-13px; bottom:-15px; margin:0; width:40px; height:40px; z-index:6; padding:6px; box-sizing:border-box;
@@ -3412,7 +3412,7 @@ function renderEndScreen(stars){
 const CHEZA_BTN = "data:image/webp;base64,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";
 
 /* ================= SÜRÜM DAMGASI + ESKİ ÖNBELLEĞİ BİR KEZ TEMİZLE ================= */
-const NENO_BUILD = "v19-1550";
+const NENO_BUILD = "v19-1560";
 try{
   if(localStorage.getItem("neno_build") !== NENO_BUILD){
     localStorage.setItem("neno_build", NENO_BUILD);              // döngüyü önle: önce yaz
@@ -3865,7 +3865,7 @@ async function init(){
 init();
 </script>
 <script>
-/* ===== NENO MASCOT (v19-1550) — MascotController =====
+/* ===== NENO MASCOT (v19-1560) — MascotController =====
    Tek koşucu (runner): aynı anda tek animasyon. Öncelik: tap 5 > correct/wrong/complete 4 > ödül/ipucu 3 > karo/çark 2 > idle 1.
    Mascot katmanı pointer-events:none; dokunuşlar belgeden pasif dinlenir, oyun girdilerine hiç müdahale edilmez. */
 (function(){
@@ -3876,7 +3876,7 @@ const MODES=["full","low","off"], LBL={full:"Kamili",low:"Kidogo",off:"Imezimwa"
 const PR={idle:1,tile:2,reward:3,event:4,tap:5};
 function getMode(){
   try{ const m=progress && progress.mascot; if(MODES.indexOf(m)>=0) return m; }catch(e){}
-  try{ return matchMedia("(prefers-reduced-motion: reduce)").matches?"low":"full"; }catch(e){ return "full"; }
+  return "full";
 }
 /* ---------- DOM ---------- */
 const css=document.createElement("style");
@@ -3918,15 +3918,15 @@ const HAT={
 };
 /* out: tam kıyafet karesi (ayakta duran ön pozlarda); hats: başlık/aksesuar katmanı (her harekette) */
 const COSTUMES={
- futbolcu:{l:"Futbolcu",out:"cos_99",hats:["band"]}, korsan:{l:"Korsan",out:null,hats:["pirate"]}, pilot:{l:"Pilot",out:"cos_102",hats:["aviator"]},
- asci:{l:"Aşçı",out:"cos_103",hats:["chef"]}, kral:{l:"Kral",out:"cos_107",hats:["crown"]}, super:{l:"Süper kahraman",out:"cos_100",hats:["hband"]},
- dedektif:{l:"Dedektif/kaşif",out:"cos_104",hats:["safari"]}, insaat:{l:"İnşaat işçisi",out:"cos_101",hats:["hard"]}, plaj:{l:"Plaj",out:"cos_98",hats:["straw"]},
- uyku:{l:"Uyku",out:null,hats:["night"]}, noel:{l:"Noel",out:"cos_108",hats:["santa"]}, parti:{l:"Parti",out:"cos_109",hats:["party"]},
- kovboy:{l:"Kovboy",out:"cos_105",hats:["fedora"]}, gozluk:{l:"Güneş gözlüğü",out:"cos_97",hats:[]}, hasir:{l:"Hasır şapka",out:"cos_96",hats:["straw"]},
- kulaklik:{l:"Kulaklık",out:null,hats:["headphones"]}, kep:{l:"Kep",out:null,hats:["cap"]}, papyon:{l:"Papyon + atkı",out:null,hats:["bowtie","scarf"]}
+ futbolcu:{l:"Mchezaji mpira",out:"cos_99",hats:["band"]}, korsan:{l:"Maharamia",out:null,hats:["pirate"]}, pilot:{l:"Rubani",out:"cos_102",hats:["aviator"]},
+ asci:{l:"Mpishi",out:"cos_103",hats:["chef"]}, kral:{l:"Mfalme",out:"cos_107",hats:["crown"]}, super:{l:"Shujaa mkuu",out:"cos_100",hats:["hband"]},
+ dedektif:{l:"Mpelelezi",out:"cos_104",hats:["safari"]}, insaat:{l:"Mjenzi",out:"cos_101",hats:["hard"]}, plaj:{l:"Ufukweni",out:"cos_98",hats:["straw"]},
+ uyku:{l:"Usingizi",out:null,hats:["night"]}, noel:{l:"Krismasi",out:"cos_108",hats:["santa"]}, parti:{l:"Sherehe",out:"cos_109",hats:["party"]},
+ kovboy:{l:"Kauboi",out:"cos_105",hats:["fedora"]}, gozluk:{l:"Miwani",out:"cos_97",hats:[]}, hasir:{l:"Kofia ya nyasi",out:"cos_96",hats:["straw"]},
+ kulaklik:{l:"Vipokea sauti",out:null,hats:["headphones"]}, kep:{l:"Kofia ya kepi",out:null,hats:["cap"]}, papyon:{l:"Tai na skafu",out:null,hats:["bowtie","scarf"]}
 };
 const CKEYS=Object.keys(COSTUMES), CYCLE=["auto","none"].concat(CKEYS);
-const CLBL=Object.assign({auto:"Otomatik",none:"Yok"},Object.fromEntries(CKEYS.map(k=>[k,COSTUMES[k].l])));
+const CLBL=Object.assign({auto:"Otomatiki",none:"Hakuna"},Object.fromEntries(CKEYS.map(k=>[k,COSTUMES[k].l])));
 const STAND={idle_1:1,idle_2:1,idle_3:1,idle_6:1,plain:1};
 const FRONT={idle_1:1,idle_2:1,idle_3:1,idle_6:1,sitF:1,plain:1};
 let costume="";
@@ -3980,8 +3980,7 @@ function mkctx(c){
     face(tx){ P.flip = tx<P.x ? -1 : 1; render(); },
     say(txt,ms){ if(ms){ talk(txt,ms); } else { talk(txt,60000); c.cleanups.push(()=>{bub.style.opacity="0";}); } },
     emote(n,fx){ setFace(n,fx); c.cleanups.push(()=>setFace(null)); },
-    hit(el,dir){ if(!el) return; el.style.setProperty("--nx",(dir*6)+"px"); el.classList.remove("neno-hit"); void el.offsetWidth; el.classList.add("neno-hit");
-      const f=()=>el.classList.remove("neno-hit"); setTimeout(f,450); c.cleanups.push(f); },
+    hit(el,dir){ if(!el) return; try{ const d=dir*6, a=el.animate([{transform:"none"},{transform:"translate("+d+"px,-3px) rotate(4deg)",offset:.3},{transform:"translate("+d*.4+"px,0) rotate(-2deg)",offset:.65},{transform:"none"}],{duration:420,easing:"ease-out"}); c.cleanups.push(()=>{try{a.cancel();}catch(e){}}); }catch(e){} },
     async move(x,y,fr,fps,speed,lift){ lift=lift||0; const x0=P.x,y0=P.y,d=Math.hypot(x-x0,y-y0); if(d<2){return;} const ms=Math.max(250,d/(speed||90)*1000); X.face(x);
       let k=-1; await X.tween(ms,t=>{ P.x=x0+(x-x0)*t; P.y=y0+(y-y0)*t; const n=Math.floor(t*ms/(1000/fps)); if(n!==k){k=n;setFrame(fr[n%fr.length]);} P.dy=-lift*Math.sin(Math.PI*t)-Math.abs(Math.sin(t*ms/1000*fps*Math.PI/2))*2; }); P.dy=0; P.x=x;P.y=y; render(); },
     async hop(x,y,peak){ const x0=P.x,y0=P.y; X.face(x); setFrame("jump_2"); await X.sleep(90); setFrame("jump_3");
@@ -3990,7 +3989,7 @@ function mkctx(c){
   };
   return X;
 }
-let sayT=0; function talk(t,ms,offer){ const sw=Array.isArray(t)?t[0]:t, tr=Array.isArray(t)?t[1]:""; bub.innerHTML="<b>"+sw+"</b>"+(tr?"<i>"+tr+"</i>":""); bub.style.opacity="1"; bub.style.pointerEvents=offer?"auto":"none"; bub.onclick=offer||null; bub.style.cursor=offer?"pointer":"";
+let sayT=0; function talk(t,ms,offer){ const sw=Array.isArray(t)?t[0]:t, tr=""; bub.innerHTML="<b>"+sw+"</b>"+(tr?"<i>"+tr+"</i>":""); bub.style.opacity="1"; bub.style.pointerEvents=offer?"auto":"none"; bub.onclick=offer||null; bub.style.cursor=offer?"pointer":"";
   clearTimeout(sayT); sayT=setTimeout(()=>{bub.style.opacity="0";bub.style.pointerEvents="none";bub.onclick=null;},ms||2200); render(); }
 const TXT={correct:[["Aaa, umeipata!","Aaa, buldun!"],["Safi sana!","Harika!"],["Hongera!","Tebrikler!"],["Mzuri!","Güzel!"]],bonus:[["Neno la ziada!","Ekstra kelime!"]],wrong:[["Una uhakika?","Emin misin?"],["Pole! Jaribu tena","Üzgünüm, tekrar dene"],["Karibu!","Ramak kaldı!"]],coin:[["Pesa!","Para!"],["Tajiri!","Zengin!"]],gift:[["Zawadi!","Hediye!"],["Asante!","Teşekkürler!"]],ad:[["Asante sana!","Sağ ol!"]],hint:[["Angalia hapa!","Şuraya bak!"]],complete:[["Hongera sana!","Tebrikler!"],["Umeshinda!","Kazandın!"]],start:[["Haya basi!","Hadi bakalım!"],["Tuanze!","Başlayalım!"],["Jaribu herufi hii!","Bu harfi dene!"]]};
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
@@ -4141,7 +4140,7 @@ function tickIdle(){
   try{ L=layout(); }catch(e){ return scheduleIdle(2000); }
   let pool=(getMode()==="full"?IDLE_ALL:IDLE_LOW).filter(n=>lastPick.indexOf(n)<0);
   const TILE=["sit_tile","kick_tile","push_tile","peek_tile","wheel_lean","wheel_turn","pu_visit"];
-  if(getMode()==="full"&&(forceTile||Math.random()<.6)){ const t=pool.filter(n=>TILE.indexOf(n)>=0); if(t.length) pool=t; } forceTile=false;
+  if(getMode()==="full"&&(forceTile||Math.random()<.8)){ const t=pool.filter(n=>TILE.indexOf(n)>=0); if(t.length) pool=t; } forceTile=false;
   for(let tries=0;tries<8&&pool.length;tries++){ const n=pool.splice(Math.floor(Math.random()*pool.length),1)[0];
     if(B[n]()){ lastPick.push(n); if(lastPick.length>3) lastPick.shift(); break; } }
   scheduleIdle();
@@ -4183,7 +4182,7 @@ function show(v){ if(v===P.vis) return; P.vis=v; root.style.display=v?"block":"n
 function tick(){
   const m=getMode(); const a=m!=="off"&&active();
   if(!a){ if(P.vis&&!overlayEnd()) show(false); return; }
-  if(!P.vis){ show(true); place(); scheduleIdle(1200); run("greet",PR.idle,async X=>{ await A.wave(X); }); return; }
+  if(!P.vis){ show(true); place(); forceTile=true; scheduleIdle(1500); run("greet",PR.idle,async X=>{ await A.wave(X); }); return; }
   if(!cur&&!touching&&!overlayUp()&&m==="full"){ const idle=Date.now()-lastInput;
     if(idle>25000&&nudge<1){ nudge=1; run("nudge",PR.reward,async X=>{ await stand(X); talk(rnd(TXT.start),2400); await A.wave(X); }); }
     else if(idle>45000&&nudge<2){ nudge=2; run("nudge",PR.reward,async X=>{ await stand(X); X.face(P.x<innerWidth/2?0:innerWidth); talk(["Hey, njoo hapa!","Hey, buraya bak!"],2600); setFrame("hand"); await X.tween(1400,t=>{ P.rot=Math.sin(t*14)*5; }); P.rot=0; }); }
@@ -4236,7 +4235,7 @@ const up=()=>{ touching=false; if(dragging&&dragRes){ dragRes(); } else if(pend)
 document.addEventListener("pointerup",up,{capture:true,passive:true}); document.addEventListener("pointercancel",up,{capture:true,passive:true});
 /* ---------- oyun kancaları (orijinal davranış aynen korunur) ---------- */
 function wrap(n,fn){ const o=window[n]; if(typeof o!=="function"||o.__nm) return; const w=function(){ return fn(o,this,arguments); }; w.__nm=1; window[n]=w; }
-function clearFx(){ document.querySelectorAll(".neno-hit").forEach(e=>e.classList.remove("neno-hit")); }
+function clearFx(){ document.querySelectorAll("#crosswordGrid .grid-cell").forEach(e=>{ try{ e.getAnimations().forEach(a=>{ if(a.effect&&a.effect.getKeyframes&&a.animationName===undefined) a.cancel(); }); }catch(x){} }); }
 function hooks(){
   wrap("checkWord",(o,t,a)=>{ clearFx(); let f0=0,m0=0,b0=0; try{ f0=gameState.found.size; m0=gameState.mistakes; b0=gameState.bonus.size; }catch(e){}
     const r=o.apply(t,a); try{ if(gameState.found.size>f0) event("correct"); else if(gameState.mistakes>m0) event("wrong"); else if(gameState.bonus.size>b0) event("bonus"); }catch(e){} return r; });
