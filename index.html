@@ -1155,7 +1155,7 @@
   }
   .game-fullscreen .board-zone .crossword-grid{ margin:0; }
 
-.hub::after{ content:"v19-1560"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
+.hub::after{ content:"v19-1580"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
 /* ===== karıştır düğmesi: çember dışında (sağ alt köşe), harf seçimini engellemez ===== */
 #gameFullscreen #shuffleBtn.wheel-mini-btn{
   left:auto; top:auto; right:-13px; bottom:-15px; margin:0; width:40px; height:40px; z-index:6; padding:6px; box-sizing:border-box;
@@ -3412,7 +3412,7 @@ function renderEndScreen(stars){
 const CHEZA_BTN = "data:image/webp;base64,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";
 
 /* ================= SÜRÜM DAMGASI + ESKİ ÖNBELLEĞİ BİR KEZ TEMİZLE ================= */
-const NENO_BUILD = "v19-1560";
+const NENO_BUILD = "v19-1580";
 try{
   if(localStorage.getItem("neno_build") !== NENO_BUILD){
     localStorage.setItem("neno_build", NENO_BUILD);              // döngüyü önle: önce yaz
@@ -3865,7 +3865,7 @@ async function init(){
 init();
 </script>
 <script>
-/* ===== NENO MASCOT (v19-1560) — MascotController =====
+/* ===== NENO MASCOT (v19-1580) — MascotController =====
    Tek koşucu (runner): aynı anda tek animasyon. Öncelik: tap 5 > correct/wrong/complete 4 > ödül/ipucu 3 > karo/çark 2 > idle 1.
    Mascot katmanı pointer-events:none; dokunuşlar belgeden pasif dinlenir, oyun girdilerine hiç müdahale edilmez. */
 (function(){
@@ -3918,7 +3918,7 @@ const HAT={
 };
 /* out: tam kıyafet karesi (ayakta duran ön pozlarda); hats: başlık/aksesuar katmanı (her harekette) */
 const COSTUMES={
- futbolcu:{l:"Mchezaji mpira",out:"cos_99",hats:["band"]}, korsan:{l:"Maharamia",out:null,hats:["pirate"]}, pilot:{l:"Rubani",out:"cos_102",hats:["aviator"]},
+ futbolcu:{l:"Mchezaji mpira",out:"cos_99",hats:["band"]}, korsan:{l:"Maharamia",out:null,hats:["pirate"]},
  asci:{l:"Mpishi",out:"cos_103",hats:["chef"]}, kral:{l:"Mfalme",out:"cos_107",hats:["crown"]}, super:{l:"Shujaa mkuu",out:"cos_100",hats:["hband"]},
  dedektif:{l:"Mpelelezi",out:"cos_104",hats:["safari"]}, insaat:{l:"Mjenzi",out:"cos_101",hats:["hard"]}, plaj:{l:"Ufukweni",out:"cos_98",hats:["straw"]},
  uyku:{l:"Usingizi",out:null,hats:["night"]}, noel:{l:"Krismasi",out:"cos_108",hats:["santa"]}, parti:{l:"Sherehe",out:"cos_109",hats:["party"]},
@@ -3991,7 +3991,7 @@ function mkctx(c){
 }
 let sayT=0; function talk(t,ms,offer){ const sw=Array.isArray(t)?t[0]:t, tr=""; bub.innerHTML="<b>"+sw+"</b>"+(tr?"<i>"+tr+"</i>":""); bub.style.opacity="1"; bub.style.pointerEvents=offer?"auto":"none"; bub.onclick=offer||null; bub.style.cursor=offer?"pointer":"";
   clearTimeout(sayT); sayT=setTimeout(()=>{bub.style.opacity="0";bub.style.pointerEvents="none";bub.onclick=null;},ms||2200); render(); }
-const TXT={correct:[["Aaa, umeipata!","Aaa, buldun!"],["Safi sana!","Harika!"],["Hongera!","Tebrikler!"],["Mzuri!","Güzel!"]],bonus:[["Neno la ziada!","Ekstra kelime!"]],wrong:[["Una uhakika?","Emin misin?"],["Pole! Jaribu tena","Üzgünüm, tekrar dene"],["Karibu!","Ramak kaldı!"]],coin:[["Pesa!","Para!"],["Tajiri!","Zengin!"]],gift:[["Zawadi!","Hediye!"],["Asante!","Teşekkürler!"]],ad:[["Asante sana!","Sağ ol!"]],hint:[["Angalia hapa!","Şuraya bak!"]],complete:[["Hongera sana!","Tebrikler!"],["Umeshinda!","Kazandın!"]],start:[["Haya basi!","Hadi bakalım!"],["Tuanze!","Başlayalım!"],["Jaribu herufi hii!","Bu harfi dene!"]]};
+const TXT={correct:[["Aaa, umeipata!"],["Safi sana!"],["Hongera!"],["Mzuri!"]],bonus:[["Neno la ziada!"]],wrong:[["Una uhakika?"],["Pole! Jaribu tena"],["Karibu!"]],coin:[["Pesa!"],["Tajiri!"]],gift:[["Zawadi!"],["Asante!"]],ad:[["Asante sana!"]],hint:[["Angalia hapa!"]],complete:[["Hongera sana!"],["Umeshinda!"]],start:[["Haya basi!"],["Tuanze!"],["Jaribu herufi hii!"]]};
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 function resetPose(){ P.dx=P.dy=P.rot=0; P.sx=P.sy=1; P.clip=null; bub.style.opacity="0"; if(curFace!=null||faceFx) setFace(null); spr.style.filter=""; }
 function run(name,prio,fn){
@@ -4045,7 +4045,9 @@ function tileSpots(kind){ const out=[]; const g=L.cells, at=(r,c)=>g.find(k=>k.r
 const pick=a=>{ if(!a.length) return null; const e=a.filter(x=>x.exp); const q=(e.length&&Math.random()<.75)?e:a; return q[Math.floor(Math.random()*q.length)]; };
 function homeSpot(){ const w=wheelSpots(); if(!w.length) return {x:L.cx,y:L.cy-L.R+3,kind:"wheel",side:0};
   const near=w.sort((a,b)=>Math.abs(a.x-P.x)-Math.abs(b.x-P.x))[0]; return near; }
+let pin=null; // oyuncu parmağıyla bıraktığı yerde kalır
 async function goto(X,sp){ // bölgeler arası: zıplama; aynı bölge: yürüme
+  if(pin) return;
   if(Math.hypot(sp.x-P.x,sp.y-P.y)<3) return;
   const same=(ST.perch&&ST.perch.kind==="wheel"&&sp.kind==="wheel")&&!touching&&!cwHas();
   if(same) await X.move(sp.x,sp.y,WALK,10,100,30);
@@ -4054,7 +4056,7 @@ async function goto(X,sp){ // bölgeler arası: zıplama; aynı bölge: yürüme
 function cwHas(){ const e=document.getElementById("currentWord"); return !!(e&&e.textContent.replace(/\s| /g,"").length); }
 async function stand(X){ if(ST.sat||(ST.perch&&ST.perch.kind!=="wheel"&&ST.perch.kind!==undefined&&ST.perch.kind!=="home")){ await standUp(X); } }
 async function standUp(X){ X.act("stand_up","start"); const was=ST.sat; ST.sat=false; if(was){ setFrame("idle_2"); await X.sleep(140); setFrame("idle_1"); await X.sleep(60); }
-  const h=homeSpot(); if(Math.hypot(h.x-P.x,h.y-P.y)>3){ await X.hop(h.x,h.y,22); ST.perch=h; } X.act("stand_up","end"); setFrame("idle_1"); }
+  const h=homeSpot(); if(!pin&&Math.hypot(h.x-P.x,h.y-P.y)>3){ await X.hop(h.x,h.y,22); ST.perch=h; } X.act("stand_up","end"); setFrame("idle_1"); }
 /* ---------- animasyonlar (spec durumları) ---------- */
 function growLimit(){ try{ L=layout(); }catch(e){ return 1; } const r=P.rect; if(!r) return 1; const w=r.r-r.l,h=r.b-r.t,cx=(r.l+r.r)/2; for(const sc of [1.26,1.18,1.1]){ if(rectFree({l:cx-w*sc/2,r:cx+w*sc/2,b:r.b,t:r.b-h*sc})) return sc; } return 1; }
 const A={
@@ -4078,17 +4080,17 @@ const A={
  async laugh(X,ms){ ms=ms||1100; X.act("laugh","start"); setFrame("idle_1"); X.emote("laugh"); X.act("laugh","loop"); await X.tween(ms,t=>{ P.dy=-Math.abs(Math.sin(t*ms/1000*9))*3; P.rot=Math.sin(t*ms/1000*14)*3; }); X.act("laugh","end"); },
  async cry(X,ms){ ms=ms||1300; X.act("cry","start"); setFrame("idle_3"); X.emote("cry","cry"); X.act("cry","loop"); await X.tween(ms,t=>{ P.sy=1-.03*Math.abs(Math.sin(t*ms/1000*8)); P.rot=Math.sin(t*ms/1000*6)*2; }); X.act("cry","end"); },
  async shock(X){ X.act("shock","start"); setFrame("idle_2"); X.emote("surprise"); X.say("!"); const g=Math.min(1.12,growLimit()); await X.tween(260,t=>{ P.sx=P.sy=1+(g-1)*t; P.dy=-10*Math.sin(Math.PI*t); }); X.act("shock","loop"); await X.sleep(350); await X.tween(300,t=>{ P.sx=P.sy=g+(1-g)*t; }); X.act("shock","end"); },
- async shy(X){ X.act("shy","start"); setFrame("back"); X.emote(null); talk(["Aibu…","Utandım…"],1800); await X.tween(350,t=>{P.sx=P.sy=1-.14*t;}); X.act("shy","loop"); await X.sleep(900); await X.tween(350,t=>{ P.sx=P.sy=.86+.14*t; }); X.act("shy","end"); },
- async angry(X){ X.act("angry","start"); setFrame("idle_2"); X.emote("angry","angry"); talk(["Basi! Inatosha!","Yeter artık!"],2400); const g=growLimit();
+ async shy(X){ X.act("shy","start"); setFrame("back"); X.emote(null); talk(["Aibu…"],1800); await X.tween(350,t=>{P.sx=P.sy=1-.14*t;}); X.act("shy","loop"); await X.sleep(900); await X.tween(350,t=>{ P.sx=P.sy=.86+.14*t; }); X.act("shy","end"); },
+ async angry(X){ X.act("angry","start"); setFrame("idle_2"); X.emote("angry","angry"); talk(["Basi! Inatosha!"],2400); const g=growLimit();
    await X.tween(380,t=>{ P.sx=P.sy=1+(g-1)*t; }); X.act("angry","loop"); setFrame("wing");
    for(let k=0;k<3;k++){ await X.tween(230,t=>{ P.dy=-9*Math.sin(Math.PI*t); P.rot=Math.sin(t*22)*4; P.sx=g*(1+.04*Math.sin(Math.PI*t)); }); }
    X.act("angry","end"); setFrame("idle_2"); await X.tween(650,t=>{ P.sx=P.sy=g+(1-g)*t; }); },
- async sleepLong(X){ X.act("sleep","start"); const pc=costume; if(costume!=="uyku") applyCostume("uyku"); X.c.cleanups.push(()=>applyCostume(pc)); setFrame("sitF"); ST.sat=false; X.emote("sleepy"); X.say(["zZz","Uyuyor…"]); X.act("sleep","loop");
+ async sleepLong(X){ X.act("sleep","start"); const pc=costume; if(costume!=="uyku") applyCostume("uyku"); X.c.cleanups.push(()=>applyCostume(pc)); setFrame("sitF"); ST.sat=false; X.emote("sleepy"); X.say(["zZz"]); X.act("sleep","loop");
    await X.tween(900000,t=>{ P.sy=1+.025*Math.sin(t*900000/1000*1.8); }); },
  async react_tap(X){ const now=Date.now(); tapN=(now-tapT<4500)?tapN+1:1; tapT=now; X.act("react_tap","start"); X.face(P.x+(Math.random()<.5?-1:1));
-   if(tapN===1){ await A.shock(X); talk(["Aaa! Nimeshtuka!","Aaa! İrkildim!"],1800); await A.wave(X); }
-   else if(tapN===2){ talk(["Acha kunitekenya!","Bana dokunma, gıdıklanıyorum!"],2600); await A.laugh(X,1500); }
-   else if(tapN===3){ talk(["Hehe, tena?","Hehe, yine mi?"],1800); await A.laugh(X,800); await A.dance(X,1100); }
+   if(tapN===1){ await A.shock(X); talk(["Aaa! Nimeshtuka!"],1800); await A.wave(X); }
+   else if(tapN===2){ talk(["Acha kunitekenya!"],2600); await A.laugh(X,1500); }
+   else if(tapN===3){ talk(["Hehe, tena?"],1800); await A.laugh(X,800); await A.dance(X,1100); }
    else if(tapN===4){ await A.shy(X); }
    else { await A.angry(X); tapN=0; }
    X.act("react_tap","end"); },
@@ -4119,14 +4121,14 @@ const B={
  dance_self:()=>run("dance_self",PR.idle,async X=>{ await stand(X); await A.dance(X,2200); }),
  laugh_self:()=>run("laugh_self",PR.idle,async X=>{ await stand(X); X.emote("goofy"); setFrame("idle_1"); await X.sleep(500); await A.laugh(X,1000); }),
  shy_self:()=>run("shy_self",PR.idle,async X=>{ await stand(X); await A.shy(X); }),
- wheel_turn:()=>{ if(!needFull()||touching||cwHas()) return false; const s=pick(wheelSpots()); if(!s) return false; return run("wheel_turn",PR.tile,async X=>{ await stand(X); await goto(X,s); X.face(L.cx); talk(["Gurudumu hili mbona halizungui?","Bu çark neden dönmüyor?"],2800);
+ wheel_turn:()=>{ if(!needFull()||touching||cwHas()) return false; const s=pick(wheelSpots()); if(!s) return false; return run("wheel_turn",PR.tile,async X=>{ await stand(X); await goto(X,s); X.face(L.cx); talk(["Gurudumu hili mbona halizungui?"],2800);
      X.emote("tired"); for(let k=0;k<3;k++){ setFrame("idle_2"); await X.tween(300,t=>{ P.rot=s.side*-(4+8*t); P.dx=-s.side*3*t; }); setFrame("wing"); await X.tween(400,t=>{ P.rot=s.side*-(12-4*Math.sin(t*20)); }); } P.rot=0; P.dx=0; setFrame("idle_2");
      if(!touching&&!cwHas()){ const b=document.getElementById("shuffleBtn"); if(b) b.click(); }
      await A.stumble(X); await A.laugh(X,800); L=layout(); await goto(X,homeSpot()); }); },
  pu_visit:()=>{ if(!needFull()) return false; const s0=size(["sitF"]), cand=[]; try{ L=layout(); }catch(e){ return false; }
    document.querySelectorAll("#gameFullscreen .pu").forEach(e=>{ const r=R(e); if(r.width<10) return; const x=(r.left+r.right)/2, y=r.top-3; if(rectFree({l:x-s0.w/2,r:x+s0.w/2,t:y-s0.h-20,b:y})) cand.push({kind:"pu",x,y,id:e.id}); });
-   const sp=pick(cand); if(!sp) return false; const T2={puHammer:["Nyundo: hufungua herufi","Çekiç: bir harf açar"],puBolt:["Umeme: herufi 3","Yıldırım: 3 harf açar"],puRocket:["Roketi: hufungua neno","Roket: bir kelime açar"],giftBtn2:["Zawadi kila dakika 10!","Hediye 10 dakikada bir!"],videoBtn:["Tazama video, pata sarafu","Video izle, jeton kazan"],hintBtn:["Tangazo → herufi","Reklam → harf"]};
-   return run("pu_visit",PR.tile,async X=>{ await stand(X); await goto(X,sp); talk(T2[sp.id]||["Hapa!","Burası!"],3200); await A.sit(X,3600); await standUp(X); }); },
+   const sp=pick(cand); if(!sp) return false; const T2={puHammer:["Nyundo: hufungua herufi"],puBolt:["Umeme: herufi 3"],puRocket:["Roketi: hufungua neno"],giftBtn2:["Zawadi kila dakika 10!"],videoBtn:["Tazama video, pata sarafu"],hintBtn:["Tangazo → herufi"]};
+   return run("pu_visit",PR.tile,async X=>{ await stand(X); await goto(X,sp); talk(T2[sp.id]||["Hapa!"],3200); await A.sit(X,3600); await standUp(X); }); },
  wheel_lean:()=>{ if(!needFull()||touching) return false; const w=wheelSpots(); const s=pick(w); if(!s) return false; return run("wheel_lean",PR.tile,async X=>{ await stand(X); await goto(X,s);
      X.face(L.cx); X.act("sad","start"); setFrame("sad_2"); await X.sleep(500); X.act("sad","loop"); setFrame("sad_1"); X.face(L.cx); await X.tween(2200,t=>{ P.rot=-s.side*(2+2*Math.sin(t*6)); }); P.rot=0; X.act("sad","end"); setFrame("idle_1"); }); }
 };
@@ -4139,6 +4141,7 @@ function tickIdle(){
   if(!P.vis||cur||touching||document.hidden||getMode()==="off"||overlayUp()){ return scheduleIdle(1500); }
   try{ L=layout(); }catch(e){ return scheduleIdle(2000); }
   let pool=(getMode()==="full"?IDLE_ALL:IDLE_LOW).filter(n=>lastPick.indexOf(n)<0);
+  if(pin){ pool=["look_around","yawn","wave","dance_self","sit_ground","feet"].filter(n=>lastPick.indexOf(n)<0); }
   const TILE=["sit_tile","kick_tile","push_tile","peek_tile","wheel_lean","wheel_turn","pu_visit"];
   if(getMode()==="full"&&(forceTile||Math.random()<.8)){ const t=pool.filter(n=>TILE.indexOf(n)>=0); if(t.length) pool=t; } forceTile=false;
   for(let tries=0;tries<8&&pool.length;tries++){ const n=pool.splice(Math.floor(Math.random()*pool.length),1)[0];
@@ -4149,10 +4152,10 @@ function overlayUp(){ return !!document.querySelector(".confirm-overlay,.ad-mock
 /* ---------- olaylar ---------- */
 function sayAt(){ return P.x; }
 const EV={
- correct:()=>run("ev_correct",PR.event,async X=>{ await stand(X); const q=Date.now(), fast=q-lastCorrect<12000; lastCorrect=q; if(fast) talk(["Haraka sana!","Çok hızlısın!"],2000); await A.laugh(X,fast?900:1000); if(Math.random()<.5) await A.jump(X,2); else await A.dance(X,1300); }),
+ correct:()=>run("ev_correct",PR.event,async X=>{ await stand(X); const q=Date.now(), fast=q-lastCorrect<12000; lastCorrect=q; if(fast) talk(["Haraka sana!"],2000); await A.laugh(X,fast?900:1000); if(Math.random()<.5) await A.jump(X,2); else await A.dance(X,1300); }),
  wrong:()=>{ wrongN++; const w=wrongN; setTimeout(()=>{ if(w===3&&!cur) offerHelp(); else if(w===5&&!cur) hintPoint(); },4500);
-   return run("ev_wrong",PR.event,async X=>{ await stand(X); const k=Math.random(); if(k<.34) await A.stumble(X); else if(k<.67) await A.shock(X); else { setFrame("idle_3"); X.emote("doubt"); await A.confused(X,1200); } await A.cry(X,1300); talk(["Usijali, jaribu tena!","Boşver, tekrar dene!"],2000); await A.laugh(X,700); }); },
- wake:()=>run("ev_wake",PR.event,async X=>{ await A.shock(X); talk(["Silali, nafikiri!","Uyumuyorum, düşünüyorum!"],2400); await A.wave(X); }),
+   return run("ev_wrong",PR.event,async X=>{ await stand(X); const k=Math.random(); if(k<.34) await A.stumble(X); else if(k<.67) await A.shock(X); else { setFrame("idle_3"); X.emote("doubt"); await A.confused(X,1200); } await A.cry(X,1300); talk(["Usijali, jaribu tena!"],2000); await A.laugh(X,700); }); },
+ wake:()=>run("ev_wake",PR.event,async X=>{ await A.shock(X); talk(["Silali, nafikiri!"],2400); await A.wave(X); }),
  bonus:()=>run("ev_bonus",PR.reward,async X=>{ await stand(X); await A.jump(X,1); }),
  coin:()=>run("ev_coin",PR.reward,async X=>{ await stand(X); await A.react_reward(X); }),
  gift:()=>run("ev_gift",PR.reward,async X=>{ await stand(X); X.act("react_reward","start"); setFrame("gift_1"); await X.tween(900,t=>{P.dy=-5*Math.abs(Math.sin(t*9));}); P.dy=0; setFrame("gift_3"); await X.sleep(700); setFrame("idle_1"); await A.jump(X,1); }),
@@ -4164,11 +4167,11 @@ const EV={
 };
 function offerHelp(){ if(!P.vis||getMode()==="off"||Date.now()-lastOffer<60000||offersLvl>=3) return false; lastOffer=Date.now(); offersLvl++;
   let useH=false; try{ useH=(pu().hammer|0)>0; }catch(e){} const id=useH?"puHammer":"hintBtn";
-  return run("offer",PR.reward,async X=>{ await stand(X); X.emote("curious"); talk(useH?["Nikusaidie? Gusa hapa!","Çekiç kullanayım mı? Dokun!"]:["Nikusaidie kidogo? Gusa!","Biraz yardım edeyim mi? Dokun!"],8000,()=>{ const b=document.getElementById(id); bub.style.opacity="0"; bub.style.pointerEvents="none"; if(b&&!b.disabled) b.click(); });
+  return run("offer",PR.reward,async X=>{ await stand(X); X.emote("curious"); talk(useH?["Nikusaidie? Gusa hapa!"]:["Nikusaidie kidogo? Gusa!"],8000,()=>{ const b=document.getElementById(id); bub.style.opacity="0"; bub.style.pointerEvents="none"; if(b&&!b.disabled) b.click(); });
     const t=document.getElementById(id), r=t?R(t):null; await A.point(X,r?(r.left+r.right)/2:null); await X.sleep(5600); }); }
 function hintPoint(){ if(!P.vis||getMode()==="off") return false; let w;
   try{ const gs=gameState; gs.__nmH=gs.__nmH||new Set(); w=gs.level.words.filter(x=>!gs.found.has(x)&&!gs.__nmH.has(x)).sort((a,b)=>a.length-b.length)[0];
-    if(!w){ talk(["Nimekuambia yote!","Hepsini söyledim!"],2000); return false; } gs.__nmH.add(w); }catch(e){ return false; }
+    if(!w){ talk(["Nimekuambia yote!"],2000); return false; } gs.__nmH.add(w); }catch(e){ return false; }
   const ch=w[0].toUpperCase(), el=[...document.querySelectorAll("#wheelWrap .letter")].find(e=>e.textContent.trim().toUpperCase()===ch), r=el?R(el):null;
   return run("hint_point",PR.reward,async X=>{ await stand(X); X.emote("proud"); talk(["Ningekuwa wewe, ningejaribu "+ch+"!","Ben olsam "+ch+" harfini denerdim!"],3400); await A.point(X,r?(r.left+r.right)/2:null); }); }
 function event(n){ if(!P.vis||getMode()==="off") return false; const full=getMode()==="full"; if(TXT[n]&&n!=="tap"&&(n!=="coin"||Date.now()-lastReward>1500)) talk(rnd(TXT[n]),2000);
@@ -4176,7 +4179,7 @@ function event(n){ if(!P.vis||getMode()==="off") return false; const full=getMod
   if(EV[n]) return EV[n](); return false; }
 /* ---------- görünürlük / yerleşim senkronu ---------- */
 rollCostume();
-function place(){ try{ L=layout(); }catch(e){ return; } const base=Math.max(92,Math.min(124,L.cs*1.65)); for(const f of [1,.92,.84,.76,.68]){ P.S=base*f/152; if(wheelSpots().length>=1) break; } const h=homeSpot(); P.x=h.x; P.y=h.y; ST.perch=h; ST.sat=false; resetPose(); P.flip=h.side>0?-1:1; setFrame("idle_1"); sig=sigNow(); }
+function place(){ try{ L=layout(); }catch(e){ return; } const base=Math.max(92,Math.min(124,L.cs*1.65)); for(const f of [1,.92,.84,.76,.68]){ P.S=base*f/152; if(wheelSpots().length>=1) break; } const h=homeSpot(); P.x=h.x; P.y=h.y; ST.perch=h; if(pin){ pin.x=Math.max(30,Math.min(L.W-30,pin.x)); pin.y=Math.max(60,Math.min(L.H-4,pin.y)); P.x=pin.x; P.y=pin.y; ST.perch=null; } ST.sat=false; resetPose(); P.flip=h.side>0?-1:1; setFrame("idle_1"); sig=sigNow(); }
 function sigNow(){ const w=document.getElementById("wheelWrap"),g=document.getElementById("crosswordGrid"); if(!w||!g) return "x"; const a=R(w),b=R(g); return [innerWidth,innerHeight,a.left|0,a.top|0,a.width|0,b.left|0,b.top|0,b.width|0,b.height|0].join(","); }
 function show(v){ if(v===P.vis) return; P.vis=v; root.style.display=v?"block":"none"; if(!v){ if(cur){cur.cancelled=true;cur.wake&&cur.wake();} } }
 function tick(){
@@ -4185,7 +4188,7 @@ function tick(){
   if(!P.vis){ show(true); place(); forceTile=true; scheduleIdle(1500); run("greet",PR.idle,async X=>{ await A.wave(X); }); return; }
   if(!cur&&!touching&&!overlayUp()&&m==="full"){ const idle=Date.now()-lastInput;
     if(idle>25000&&nudge<1){ nudge=1; run("nudge",PR.reward,async X=>{ await stand(X); talk(rnd(TXT.start),2400); await A.wave(X); }); }
-    else if(idle>45000&&nudge<2){ nudge=2; run("nudge",PR.reward,async X=>{ await stand(X); X.face(P.x<innerWidth/2?0:innerWidth); talk(["Hey, njoo hapa!","Hey, buraya bak!"],2600); setFrame("hand"); await X.tween(1400,t=>{ P.rot=Math.sin(t*14)*5; }); P.rot=0; }); }
+    else if(idle>45000&&nudge<2){ nudge=2; run("nudge",PR.reward,async X=>{ await stand(X); X.face(P.x<innerWidth/2?0:innerWidth); talk(["Hey, njoo hapa!"],2600); setFrame("hand"); await X.tween(1400,t=>{ P.rot=Math.sin(t*14)*5; }); P.rot=0; }); }
     else if(idle>65000&&nudge<3){ nudge=3; if(!offerHelp()) hintPoint(); }
     else if(idle>95000&&nudge<4){ nudge=4; run("sleep_long",PR.idle,async X=>{ await stand(X); await A.sleepLong(X); }); } }
   const s=sigNow(); if(s!==sig){ if(cur){cur.cancelled=true;cur.wake&&cur.wake();} setTimeout(()=>{ if(!cur){ place(); } },60); sig=s; }
@@ -4196,7 +4199,7 @@ setInterval(()=>{ if(!P.vis||!P.rect) return; const e=document.getElementById("c
   if(e&&cwHas()){ const r=R(e), q=P.rect; hide = q.l<r.right&&q.r>r.left&&q.t<r.bottom&&q.b>r.top; }
   root.style.opacity=hide?"0.12":"1";
   if(!cur&&!touching){ try{ L=layout(); const q=P.rect; let bad=false; for(const b of L.blk){ if(b.cw) continue; if(q.l+4<b.r&&q.r-4>b.l&&q.t+4<b.b&&q.b-4>b.t){bad=true;break;} }
-      if(bad&&Date.now()-lastDodge>1500){ lastDodge=Date.now(); const h=homeSpot(); run("dodge",PR.event,async X=>{ ST.sat=false; await X.hop(h.x,h.y,30); ST.perch=h; }); } }catch(e){} } },120);
+      if(bad&&!pin&&Date.now()-lastDodge>1500){ lastDodge=Date.now(); const h=homeSpot(); run("dodge",PR.event,async X=>{ ST.sat=false; await X.hop(h.x,h.y,30); ST.perch=h; }); } }catch(e){} } },120);
 /* ---- doğrudan kontrol: sürükle-bırak + karo komutu ---- */
 let lastInput=Date.now(), nudge=0, lastTapAt=0; let pend=null, dragging=false, dragRes=null, lastX=0; const cmdN=new WeakMap();
 function cmdSpot(el,kind){ L=layout(); const k=L.cells.find(c=>c.el===el); if(!k) return null; const s=size(["kick_3","kick_4","push_1","push_4"]);
@@ -4212,10 +4215,8 @@ function setCostumeMode(m){ try{ progress.mascotCostume=m; saveProgress(); }catc
 function startDrag(){ return run("drag",6,async X=>{ ST.sat=false; ST.perch=null; X.act("drag","start"); setFrame("jump_3"); P.flip=1; dragging=true;
     try{ await new Promise((res,rej)=>{ dragRes=res; X.c.wake=()=>rej(new Cancel()); }); } finally{ dragging=false; dragRes=null; }
     X.c.wake=null; P.rot=0; P.dy=0; L=layout();
-    let best=null,bd=1e9; const cy=P.y-fh("jump_3")/2; L.cells.forEach(k=>{ const d=Math.hypot((k.rect.l+k.rect.r)/2-P.x,(k.rect.t+k.rect.b)/2-cy); if(d<bd){bd=d;best=k;} });
-    if(!best){ const h=homeSpot(); await X.hop(h.x,h.y,30); ST.perch=h; return; }
-    const sp={kind:"top",x:(best.rect.l+best.rect.r)/2,y:Math.max(best.rect.t+5,L.hudB+fh("sitF")+4),cell:best};
-    await X.hop(sp.x,sp.y,30); ST.perch=sp; await A.sit(X,4500); await standUp(X); }); }
+    P.x=Math.max(30,Math.min(L.W-30,P.x)); P.y=Math.max(fh("idle_1")+6,Math.min(L.H-4,P.y)); ST.perch=null; setFrame("idle_1"); P.flip=P.flip||1; render();
+    pin={x:P.x,y:P.y}; await X.tween(160,t=>{ P.sy=1-.08*Math.sin(Math.PI*t); P.sx=1+.05*Math.sin(Math.PI*t); }); P.sx=P.sy=1; talk("Hapa pazuri!",1600); scheduleIdle(4000); }); }
 document.addEventListener("pointerdown",e=>{
   if(!P.vis) return; lastInput=Date.now(); nudge=0; if(cur&&/sleepLong|sleep_long/.test(cur.name)){ event("wake"); return; } if(!cur&&!dragging&&getMode()!=="off"){ P.flip=e.clientX<P.x?-1:1; render(); }
   const w=document.getElementById("wheelWrap"), inWheel=!!(w&&w.contains(e.target));
@@ -4224,7 +4225,7 @@ document.addEventListener("pointerdown",e=>{
   if(inWheel) touching=true;
   if(hit){ pend={x:e.clientX,y:e.clientY}; lastX=e.clientX; return; }
   const cell=e.target.closest&&e.target.closest("#crosswordGrid .grid-cell:not(.empty)");
-  if(cell&&getMode()==="full"&&(!cur||cur.prio<=PR.tile)) tileCommand(cell);
+  if(cell&&!pin&&getMode()==="full"&&(!cur||cur.prio<=PR.tile)) tileCommand(cell);
   else if(inWheel&&cur&&cur.prio<PR.event&&(cur.name==="walk"||cur.name==="wheel_lean")){ cur.cancelled=true; cur.wake&&cur.wake(); }
 },{capture:true,passive:true});
 document.addEventListener("pointermove",e=>{
