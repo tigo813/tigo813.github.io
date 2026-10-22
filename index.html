@@ -1155,7 +1155,7 @@
   }
   .game-fullscreen .board-zone .crossword-grid{ margin:0; }
 
-.hub::after{ content:"v19-2080"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
+.hub::after{ content:"v19-2100"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
 /* ===== karıştır düğmesi: çember dışında (sağ alt köşe), harf seçimini engellemez ===== */
 #gameFullscreen #shuffleBtn.wheel-mini-btn{
   left:auto; top:auto; right:-13px; bottom:-15px; margin:0; width:40px; height:40px; z-index:6; padding:6px; box-sizing:border-box;
@@ -3439,7 +3439,7 @@ function renderEndScreen(stars){
 const CHEZA_BTN = "data:image/webp;base64,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";
 
 /* ================= SÜRÜM DAMGASI + ESKİ ÖNBELLEĞİ BİR KEZ TEMİZLE ================= */
-const NENO_BUILD = "v19-2080";
+const NENO_BUILD = "v19-2100";
 try{
   if(localStorage.getItem("neno_build") !== NENO_BUILD){
     localStorage.setItem("neno_build", NENO_BUILD);              // döngüyü önle: önce yaz
@@ -3898,7 +3898,7 @@ async function init(){
 init();
 </script>
 <script>
-/* ===== NENO MASCOT (v19-2080) — MascotController =====
+/* ===== NENO MASCOT (v19-2100) — MascotController =====
    Tek koşucu (runner): aynı anda tek animasyon. Öncelik: tap 5 > correct/wrong/complete 4 > ödül/ipucu 3 > karo/çark 2 > idle 1.
    Mascot katmanı pointer-events:none; dokunuşlar belgeden pasif dinlenir, oyun girdilerine hiç müdahale edilmez. */
 (function(){
@@ -4564,7 +4564,7 @@ function mk(){
   root=document.createElement("div"); root.id="nenoHero"; img=document.createElement("img"); img.alt=""; img.draggable=false; root.appendChild(img);
   hit=document.createElement("div"); hit.className="nh-hit"; root.appendChild(hit); document.body.appendChild(root);
   bub=document.createElement("div"); bub.className="nh-bub"; bub.style.opacity="0"; document.body.appendChild(bub);
-  hit.addEventListener("pointerup",e=>{ e.stopPropagation(); onTap(); });
+  hit.addEventListener("pointerup",e=>{ e.stopPropagation(); heroPointer(); });
 }
 function setPose(n){ if(IMG[n]&&pose!==n){ pose=n; img.src=IMG[n]; } }
 function hubUp(){ try{ return window.NenoMascot&&window.NenoMascot._hubOn&&window.NenoMascot._hubOn()&&!document.querySelector(".confirm-overlay,.ad-mock-overlay,.end-screen"); }catch(e){ return false; } }
@@ -4588,9 +4588,9 @@ async function doAct(a){
   else if(a==="sleep"){ setPose("sit"); await sleep(1200); setPose("sleep"); sleeping=true; return; }
   setPose("idle_01"); }
 function dlgClose(){ clearTimeout(dlgT); if(dlg){ dlg.remove(); dlg=null; } if(dlgAway){ document.removeEventListener("pointerdown",dlgAway,true); dlgAway=null; } }
-async function openDialog(forceId){
-  if(dlg||lock) return; const NM=window.NenoMascot; if(!NM||!NM._pick) return; lock=1; lastTouch=Date.now();
-  try{ const d=(forceId&&NM._forced&&NM._forced(forceId))||NM._pick(); if(!d){ lock=0; return; }
+async function openDialog(forceId,forceObj){
+  if(dlg||lock) return; const NM=window.NenoMascot; if(!forceObj&&(!NM||!NM._pick)) return; lock=1; lastTouch=Date.now();
+  try{ const d=forceObj||(forceId&&NM._forced&&NM._forced(forceId))||NM._pick(); if(!d){ lock=0; return; }
     dlg=document.createElement("div"); dlg.className="nh-dlg"; const q=document.createElement("div"); q.className="q"; q.textContent=d.q; dlg.appendChild(q);
     d.o.map(op=>Array.isArray(op)?{t:op[0],r:op[1],m:op[2]}:op).forEach(op=>{ const b=document.createElement("button"); b.textContent=op.t; b.onclick=ev=>{ ev.stopPropagation(); answer(op); }; dlg.appendChild(b); });
     const x=document.createElement("button"); x.className="x"; x.textContent="✕"; x.onclick=ev=>{ ev.stopPropagation(); dlgClose(); setPose("idle_01"); lock=0; }; dlg.appendChild(x);
@@ -4599,12 +4599,12 @@ async function openDialog(forceId){
     dlgT=setTimeout(()=>{ if(dlg){ dlgClose(); setPose("idle_01"); lock=0; } },14000);
     setPose("gesture_point_up"); await sleep(900); if(dlg) setPose("face_think");
   }catch(e){ lock=0; } }
-async function answer(op){ dlgClose(); lock=1; lastTouch=Date.now(); try{ const NM=window.NenoMascot; if(op.s&&NM&&NM._mem) NM._mem(op.s[0],op.s[1]);
+async function answer(op){ dlgClose(); lock=1; lastTouch=Date.now(); try{ if(op.fn) op.fn(); const NM=window.NenoMascot; if(op.s&&NM&&NM._mem) NM._mem(op.s[0],op.s[1]);
     let r=op.r; if(r&&r[0]==="@") r="Anza mchezo, nitakusaidia kwa vidokezo!";
     if(op.a==="sleep"){ await say(r,op.m,1600); await doAct("sleep"); lock=0; return; }
     const sp=say(r,op.m); await sleep(500); if(op.a) { await sp; await doAct(op.a); } else await sp;
-    }catch(e){} lock=0; setPose("idle_01"); if(op.n){ setTimeout(()=>{ if(shown&&!lock&&!dlg) openDialog(op.n); },700); } }
-async function onTap(){ lastTouch=Date.now(); if(sleeping){ sleeping=false; lock=1; setPose("face_surprised"); await say("Aaa! Nimeamka!","goofy",1600); lock=0; return; } if(dlg){ return; } if(lock) return; openDialog(); }
+    }catch(e){} lock=0; setPose("idle_01"); if(op.then){ try{ setTimeout(op.then,200); }catch(e){} } if(op.n){ setTimeout(()=>{ if(shown&&!lock&&!dlg) openDialog(op.n); },700); } }
+async function onTap(){ lastTouch=Date.now(); if(sleeping){ sleeping=false; lock=1; setPose("face_surprised"); await say("Aaa! Nimeamka!","goofy",1600); lock=0; return; } if(dlg){ return; } if(TB.loop){ if(TB.st==="recording"){ bubShow("Nakusikiliza! Ongea nami. Gusa mara mbili nikae kimya."); setTimeout(()=>{ if(TB.st==="recording") bub.style.opacity="0"; },2600); } return; } if(lock) return; if(getConsent()===1&&!TB.loop&&!TB.muted&&TB.st==="idle"){ say("Nakusikiliza tena! Ongea.","happy",1800); TB.muted=false; micTap(); return; } openDialog(); }
 async function greet(){ if(lock) return; lock=1; try{ setPose("gesture_wave"); const h=new Date().getHours(); const t=h<5?"Usiku mwema! Bado macho?":h<12?"Habari za asubuhi!":h<18?"Habari za mchana!":"Habari za jioni!"; const sp=say(t+" Karibu!","happy",2400); await sleep(1400); await sp; }catch(e){} lock=0; setPose("idle_01"); }
 async function idleStep(){
   const now=Date.now(); if(!shown||lock||dlg||sleeping) return;
@@ -4612,50 +4612,64 @@ async function idleStep(){
   if(now>nextBlink){ nextBlink=now+2400+Math.random()*3200; setPose("idle_02"); await sleep(140); if(!lock&&!dlg&&!sleeping) setPose("idle_01"); return; }
   if(now>nextLook){ nextLook=now+6000+Math.random()*7000; const p=["idle_03","idle_04","turn_left","turn_right"][Math.floor(Math.random()*4)]; setPose(p); await sleep(1300); if(!lock&&!dlg&&!sleeping) setPose("idle_01"); return; }
   if(now>nextSay){ nextSay=now+26000+Math.random()*16000; lock=1; try{ const NM=window.NenoMascot; const g=["gesture_wave","gesture_hips","gesture_shrug","gesture_thumbs","gesture_present"][Math.floor(Math.random()*5)]; setPose(g); const t=(NM&&NM._chat)?NM._chat():"Karibu tena!"; await say(t,["happy","curious","grin"][Math.floor(Math.random()*3)],3200); }catch(e){} lock=0; setPose("idle_01"); } }
-function tick(){ try{ const up=hubUp()&&place(); if(up&&!shown){ shown=true; root.style.opacity="1"; window.__NENO_HERO_ON=true; lastTouch=Date.now(); setPose(sleeping?"sleep":"idle_01"); if(!greeted){ greeted=true; setTimeout(greet,700); } }
+function autoMic(){ setTimeout(()=>{ try{ if(!shown||dlg||TB.loop||TB.muted) return; const c=getConsent(); if(c===1){ micTap(); } else if(c===null&&!TB.asked){ TB.asked=true; let n=0; const w=setInterval(()=>{ n++; if(!shown){ clearInterval(w); TB.asked=false; return; } if(!lock&&!dlg){ clearInterval(w); openDialog(null,consentTopic()); } else if(n>20) clearInterval(w); },500); } }catch(e){} },4200); }
+function tick(){ try{ const up=hubUp()&&place(); if(up&&!shown){ shown=true; root.style.opacity="1"; window.__NENO_HERO_ON=true; lastTouch=Date.now(); setPose(sleeping?"sleep":"idle_01"); if(!greeted){ greeted=true; setTimeout(greet,700); } autoMic(); }
     else if(!up&&shown){ tbStop(); shown=false; root.style.opacity="0"; bub.style.opacity="0"; dlgClose(); lock=0; sleeping=false; talkStop("idle_01"); }
     micPlace(); if(shown){ bubPlace(); dlgPlace(); } idleStep(); }catch(e){} }
 
 /* ===================== TALK-BACK: oyuncunun sesini komik sesle tekrarla ===================== */
-const TB={st:"idle",ctx:null,stream:null,proc:null,src:null,chunks:[],sr:48000,t0:0,speech:false,lastVoice:0,floor:0,iv:0,blinkIv:0,play:null,pctx:null,anIv:0,micBtn:null,xBtn:null,musicV:null};
+const TB={muted:false,asked:false,st:"idle",ctx:null,stream:null,proc:null,src:null,chunks:[],sr:48000,t0:0,speech:false,lastVoice:0,floor:0,iv:0,blinkIv:0,play:null,pctx:null,anIv:0,micBtn:null,xBtn:null,musicV:null};
 const PITCH=1.55, TEMPO=1.12, MAXMS=8000;
+
+function getConsent(){ try{ const v=localStorage.getItem("nenoMicConsent"); return v==="1"?1:v==="0"?0:null; }catch(e){ return null; } }
+function setConsent(v){ try{ localStorage.setItem("nenoMicConsent",String(v)); }catch(e){} }
+function consentTopic(){ return {id:"micconsent",q:"Nikusikilize na kurudia maneno yako kwa sauti ya kuchekesha? Sauti yako haihifadhiwi.",o:[{t:"Ndiyo, sikiliza",r:"Sawa! Ongea nami, nitarudia! Gusa mara mbili ili nikae kimya.",m:"joy",a:"wave",fn:()=>setConsent(1),then:()=>{ TB.muted=false; micTap(); }},{t:"Hapana",r:"Sawa, hakuna shida! Gusa mara mbili ukibadili mawazo.",m:"happy",fn:()=>setConsent(0)}]}; }
+let tapPend=null;
+function heroPointer(){ if(tapPend){ clearTimeout(tapPend); tapPend=null; doubleTap(); } else { tapPend=setTimeout(()=>{ tapPend=null; onTap(); },300); } }
+async function doubleTap(){ lastTouch=Date.now();
+  if(TB.loop){ TB.muted=true; stopLoop(); say("Sawa, nimenyamaza. Gusa mara mbili uniwashe tena.","happy",3000); return; }
+  if(getConsent()!==1){ if(!lock&&!dlg) openDialog(null,consentTopic()); return; }
+  TB.muted=false; micTap(); }
 function tbMsg(t,mood){ say(t,mood||"doubt",3600); }
 function musicDuck(on){ try{ if(typeof menuMusicEl!=="undefined"&&menuMusicEl){ if(on){ if(TB.musicV==null) TB.musicV=menuMusicEl.volume; menuMusicEl.volume=Math.min(menuMusicEl.volume,0.02); } else if(TB.musicV!=null){ menuMusicEl.volume=TB.musicV; TB.musicV=null; } } }catch(e){} }
-function micStyle(){ const b=TB.micBtn; if(!b) return; const rec=TB.st==="recording"; b.style.background=rec?"#c62828":"#b8631b"; b.style.opacity=(TB.st==="idle"||rec)?"1":"0.5"; b.innerHTML=rec?'<svg viewBox="0 0 24 24" width="26" height="26"><rect x="6" y="6" width="12" height="12" rx="2" fill="#fff"/></svg>':'<svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V22h2v-3.1A7 7 0 0 0 19 12h-2z"/></svg>'; b.classList.toggle("rec",rec); if(TB.xBtn) TB.xBtn.style.display=rec?"block":"none"; }
+function micStyle(){ const b=TB.micBtn; if(!b) return; const on=!!TB.loop; b.style.background=on?"#c62828":"#b8631b"; b.style.opacity=(TB.st==="asking")?"0.5":"1"; b.innerHTML=on?'<svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V22h2v-3.1A7 7 0 0 0 19 12h-2z"/><path stroke="#fff" stroke-width="2.4" stroke-linecap="round" d="M4 4l16 16"/></svg>':'<svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V22h2v-3.1A7 7 0 0 0 19 12h-2z"/></svg>'; b.classList.toggle("rec",on); b.setAttribute("aria-label",on?"Acha kusikiliza":"Ongea na Neno"); if(TB.xBtn) TB.xBtn.style.display="none"; }
 function mkMic(){
   const st=document.createElement("style"); st.textContent="#nhMic,#nhMicX{position:fixed;z-index:64;display:none;border-radius:50%;border:3px solid #ffd27a;color:#fff;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.45);touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:0;align-items:center;justify-content:center}#nhMic{width:56px;height:56px;background:#b8631b}#nhMic.rec{animation:nhPulse 1s ease-in-out infinite}#nhMicX{width:30px;height:30px;background:#6b3e12;font:800 14px system-ui,sans-serif;line-height:1}@keyframes nhPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,60,60,.7)}50%{box-shadow:0 0 0 12px rgba(255,60,60,0)}}#nenoHero.tilt{transform:rotate(-8deg);transform-origin:50% 92%}#nenoHero{transition:opacity .3s,transform .25s}"; document.head.appendChild(st);
   const b=document.createElement("button"); b.id="nhMic"; b.setAttribute("aria-label","Ongea na Neno"); b.onclick=ev=>{ ev.stopPropagation(); micTap(); }; document.body.appendChild(b); TB.micBtn=b;
-  const x=document.createElement("button"); x.id="nhMicX"; x.textContent="✕"; x.setAttribute("aria-label","Ghairi"); x.onclick=ev=>{ ev.stopPropagation(); recFinish(true); }; document.body.appendChild(x); TB.xBtn=x; micStyle(); }
-function micPlace(){ if(!rect||!TB.micBtn) return; const on=shown; TB.micBtn.style.display=on?"flex":"none"; if(TB.st!=="recording") TB.xBtn.style.display="none"; else TB.xBtn.style.display=on?"flex":"none"; if(!on) return; const bx=Math.max(8,rect.x-30), by=rect.top+rect.h-64; TB.micBtn.style.left=bx+"px"; TB.micBtn.style.top=by+"px"; TB.xBtn.style.left=(bx+40)+"px"; TB.xBtn.style.top=(by-22)+"px"; }
-function micTap(){ if(TB.st==="recording"){ recFinish(false); return; } if(TB.st!=="idle") return; if(dlg){ dlgClose(); lock=0; setPose("idle_01"); } if(lock){ let n=0; const w=setInterval(()=>{ n++; if(!lock&&TB.st==="idle"){ clearInterval(w); recStart(); } else if(n>24) clearInterval(w); },250); return; } recStart(); }
+  const x=document.createElement("button"); x.id="nhMicX"; x.textContent="✕"; x.setAttribute("aria-label","Ghairi"); x.onclick=ev=>{ ev.stopPropagation(); stopLoop(); }; document.body.appendChild(x); TB.xBtn=x; micStyle(); }
+function micPlace(){ if(!rect||!TB.micBtn) return; const on=shown; TB.micBtn.style.display="none"; TB.xBtn.style.display="none"; if(!on) return; const bx=Math.max(8,rect.x-30), by=rect.top+rect.h-64; TB.micBtn.style.left=bx+"px"; TB.micBtn.style.top=by+"px"; TB.xBtn.style.left=(bx+40)+"px"; TB.xBtn.style.top=(by-22)+"px"; }
+function micTap(){ if(TB.loop){ stopLoop(); return; } if(TB.st!=="idle") return; if(dlg){ dlgClose(); lock=0; setPose("idle_01"); } if(lock){ let n=0; const w=setInterval(()=>{ n++; if(!lock&&TB.st==="idle"){ clearInterval(w); recStart(); } else if(n>24) clearInterval(w); },250); return; } recStart(); }
 async function recStart(){
   try{ if(typeof progress!=="undefined"&&progress.soundOn===false){ tbMsg("Washa sauti kwanza ili nikusikie!","curious"); return; } }catch(e){}
   if(lock||dlg){ return; } const AC=window.AudioContext||window.webkitAudioContext;
   if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!AC){ tbMsg("Kifaa hiki hakiungi maikrofoni.","sad"); return; }
   lock=1; TB.st="asking"; micStyle(); lastTouch=Date.now(); sleeping=false; let stream=null;
   try{ stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}}); }
-  catch(e){ TB.st="idle"; lock=0; micStyle(); const n=e&&e.name; setPose("idle_01");
-    let fr=false; try{ fr=window.self!==window.top; }catch(_){ fr=true; } if(fr&&(n==="NotAllowedError"||n==="SecurityError")) tbMsg("Maikrofoni haifanyi kazi kwenye hakiki hii. Fungua mchezo kwenye kivinjari au programu.","curious"); else if(n==="NotAllowedError"||n==="SecurityError"||n==="PermissionDeniedError") tbMsg("Siwezi kukusikia. Ruhusu maikrofoni kwenye mipangilio ya simu, kisha jaribu tena.","sad");
+  catch(e){ TB.st="idle"; lock=0; micStyle(); const n=e&&e.name; setPose("idle_01"); let fr=false; try{ fr=window.self!==window.top; }catch(_){ fr=true; }
+    if(fr&&(n==="NotAllowedError"||n==="SecurityError")) tbMsg("Maikrofoni haifanyi kazi kwenye hakiki hii. Fungua mchezo kwenye kivinjari au programu.","curious");
+    else if(n==="NotAllowedError"||n==="SecurityError"||n==="PermissionDeniedError") tbMsg("Siwezi kukusikia. Ruhusu maikrofoni kwenye mipangilio ya simu, kisha jaribu tena.","sad");
     else if(n==="NotFoundError"||n==="DevicesNotFoundError") tbMsg("Sioni maikrofoni kwenye kifaa hiki.","sad");
     else tbMsg("Maikrofoni ina hitilafu. Jaribu tena baadaye.","sad"); return; }
-  try{ TB.stream=stream; TB.ctx=new AC(); try{ await TB.ctx.resume(); }catch(e){} TB.sr=TB.ctx.sampleRate; TB.chunks=[]; TB.speech=false; TB.lastVoice=0; TB.floor=0.012;
+  try{ TB.stream=stream; TB.ctx=new AC(); try{ await TB.ctx.resume(); }catch(e){} TB.sr=TB.ctx.sampleRate; TB.chunks=[]; if(TB.ctx.state!=="running"){ const rs=()=>{ try{ TB.ctx&&TB.ctx.resume(); }catch(e){} document.removeEventListener("pointerdown",rs,true); }; document.addEventListener("pointerdown",rs,true); }
     TB.src=TB.ctx.createMediaStreamSource(stream); TB.proc=TB.ctx.createScriptProcessor(4096,1,1); const mute=TB.ctx.createGain(); mute.gain.value=0;
-    let nf=0,nn=0;
-    TB.proc.onaudioprocess=e=>{ if(TB.st!=="recording") return; const d=e.inputBuffer.getChannelData(0); TB.chunks.push(new Float32Array(d)); let s=0; for(let i=0;i<d.length;i++) s+=d[i]*d[i]; const r=Math.sqrt(s/d.length); const el=Date.now()-TB.t0; if(el<350){ nf+=r; nn++; TB.floor=Math.max(0.012,(nf/nn)*2.6); } else if(r>TB.floor){ TB.speech=true; TB.lastVoice=Date.now(); } };
+    TB.nf=0; TB.nn=0; TB.voiced=0;
+    TB.proc.onaudioprocess=e=>{ if(TB.st!=="recording") return; const d=e.inputBuffer.getChannelData(0); TB.chunks.push(new Float32Array(d)); let s=0; for(let i=0;i<d.length;i++) s+=d[i]*d[i]; const r=Math.sqrt(s/d.length); const el=Date.now()-TB.t0; if(el<350){ TB.nf+=r; TB.nn++; TB.floor=Math.max(0.012,(TB.nf/TB.nn)*2.6); } else if(r>TB.floor){ TB.voiced+=d.length/TB.sr; if(TB.voiced>=0.25) TB.speech=true; TB.lastVoice=Date.now(); } };
     TB.src.connect(TB.proc); TB.proc.connect(mute); mute.connect(TB.ctx.destination);
-    TB.st="recording"; TB.t0=Date.now(); musicDuck(true); micStyle(); root.classList.add("tilt"); setPose("idle_03"); bubShow("Nakusikiliza... ongea!");
-    let k=0; TB.blinkIv=setInterval(()=>{ k++; setPose(k%3===0?"idle_02":(k%2?"idle_03":"idle_01")); setTimeout(()=>{ if(TB.st==="recording") setPose("idle_03"); },140); },1300);
-    TB.iv=setInterval(()=>{ const el=Date.now()-TB.t0; if(el>=MAXMS) recFinish(false); else if(TB.speech&&el>700&&Date.now()-TB.lastVoice>1000) recFinish(false); else if(!TB.speech&&el>6500) recFinish(false); },120);
-  }catch(e){ recCleanup(); TB.st="idle"; lock=0; micStyle(); setPose("idle_01"); tbMsg("Maikrofoni ina hitilafu. Jaribu tena baadaye.","sad"); } }
+    TB.loop=true; TB.idleSince=Date.now(); musicDuck(true); micStyle(); bubShow("Nakusikiliza... ongea, nitarudia!"); setTimeout(()=>{ if(TB.st==="recording") bub.style.opacity="0"; },2600); segBegin();
+  }catch(e){ stopLoop("Maikrofoni ina hitilafu. Jaribu tena baadaye."); } }
+function segBegin(){ if(!TB.loop) return; clearInterval(TB.iv); clearInterval(TB.blinkIv); TB.chunks=[]; TB.speech=false; TB.voiced=0; TB.lastVoice=0; TB.nf=0; TB.nn=0; TB.floor=0.012; TB.t0=Date.now(); TB.st="recording"; root.classList.add("tilt"); setPose("idle_03"); micStyle();
+  let k=0; TB.blinkIv=setInterval(()=>{ if(TB.st!=="recording") return; k++; setPose(k%3===0?"idle_02":(k%2?"idle_03":"idle_01")); setTimeout(()=>{ if(TB.st==="recording") setPose("idle_03"); },140); },1300);
+  TB.iv=setInterval(()=>{ if(TB.st!=="recording") return; const now=Date.now(), el=now-TB.t0; if(now-TB.idleSince>180000){ stopLoop(); return; }
+    if(el>=MAXMS) segEnd(); else if(TB.speech&&el>700&&now-TB.lastVoice>1000) segEnd(); else if(!TB.speech&&el>6500) segBegin(); },120); }
 function bubShow(t){ clearTimeout(bubT); bub.textContent=t; bub.style.opacity="1"; bubPlace(); }
-function recCleanup(){ clearInterval(TB.iv); clearInterval(TB.blinkIv); TB.iv=TB.blinkIv=0; try{ TB.proc&&(TB.proc.onaudioprocess=null); TB.src&&TB.src.disconnect(); TB.proc&&TB.proc.disconnect(); }catch(e){} try{ TB.stream&&TB.stream.getTracks().forEach(t=>t.stop()); }catch(e){} try{ TB.ctx&&TB.ctx.close(); }catch(e){} TB.stream=TB.ctx=TB.src=TB.proc=null; root.classList.remove("tilt"); }
-async function recFinish(cancel){
-  if(TB.st!=="recording") return; const chunks=TB.chunks, sr=TB.sr, speech=TB.speech; TB.chunks=[]; recCleanup(); bub.style.opacity="0";
-  if(cancel){ TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); return; }
-  let n=0; chunks.forEach(c=>n+=c.length); if(!speech||n<sr*0.35){ TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); tbMsg("Sikusikia kitu. Karibia maikrofoni na ujaribu tena.","curious"); return; }
-  TB.st="processing"; micStyle(); setPose("face_think"); await sleep(30);
+function recCleanup(){ clearInterval(TB.iv); clearInterval(TB.blinkIv); TB.iv=TB.blinkIv=0; try{ TB.proc&&(TB.proc.onaudioprocess=null); TB.src&&TB.src.disconnect(); TB.proc&&TB.proc.disconnect(); }catch(e){} try{ TB.stream&&TB.stream.getTracks().forEach(t=>t.stop()); }catch(e){} try{ TB.ctx&&TB.ctx.close(); }catch(e){} TB.stream=TB.ctx=TB.src=TB.proc=null; TB.chunks=[]; root.classList.remove("tilt"); }
+function stopLoop(msg){ TB.loop=false; clearInterval(TB.iv); clearInterval(TB.blinkIv); clearInterval(TB.anIv); TB.anIv=0; try{ TB.play&&(TB.play.onended=null,TB.play.stop()); }catch(e){} try{ TB.pctx&&TB.pctx.close(); }catch(e){} TB.pctx=null; TB.play=null; recCleanup(); bub.style.opacity="0"; TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); lastTouch=Date.now(); if(msg) tbMsg(msg,"curious"); }
+async function segEnd(){
+  if(TB.st!=="recording") return; const chunks=TB.chunks, sr=TB.sr; TB.chunks=[]; clearInterval(TB.iv); clearInterval(TB.blinkIv); TB.iv=TB.blinkIv=0; TB.st="processing"; root.classList.remove("tilt"); micStyle(); bub.style.opacity="0";
+  let n=0; chunks.forEach(c=>n+=c.length); if(n<sr*0.35){ segBegin(); return; }
+  TB.idleSince=Date.now(); setPose("face_think"); await sleep(30);
   let out=null; try{ const x=new Float32Array(n); let o=0; chunks.forEach(c=>{ x.set(c,o); o+=c.length; }); out=funnyVoice(x,sr); }catch(e){ out=null; }
-  if(!out){ TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); tbMsg("Nimeshindwa kuchakata sauti. Jaribu tena.","sad"); return; }
+  if(!TB.loop) return; if(!out){ segBegin(); return; }
   playOut(out); }
 /* --- ses işleme: önce kenar sessizliğini kırp, sonra ince sese çevir (pitch x1.55) ve süreyi SOLA ile koru (tempo x1.12) --- */
 function trimSil(x,sr,thr){ let a=0,b=x.length-1; const w=Math.floor(sr*0.02); const rms=(i)=>{ let s=0; for(let k=0;k<w&&i+k<x.length;k++) s+=x[i+k]*x[i+k]; return Math.sqrt(s/w); }; while(a<x.length-w&&rms(a)<thr) a+=w; while(b>a+w&&rms(b-w)<thr) b-=w; a=Math.max(0,a-Math.floor(sr*0.12)); b=Math.min(x.length,b+Math.floor(sr*0.15)); return x.subarray(a,b); }
@@ -4674,12 +4688,12 @@ async function playOut(out){
     src.onended=done; TB.play=src;
     TB.anIv=setInterval(()=>{ an.getFloatTimeDomainData(d); let s=0; for(let i=0;i<d.length;i++) s+=d[i]*d[i]; const r=Math.sqrt(s/d.length); refmax=Math.max(refmax*0.995,r); sm=sm*0.4+r*0.6; const q=sm/refmax; setPose(q<0.12?"talk_01":q<0.35?"talk_02":q<0.65?"talk_03":"talk_04"); },70);
     src.start(); setTimeout(()=>{ if(TB.st==="talking") done(); },dur*1000+1200);
-  }catch(e){ try{ ctx&&ctx.close(); }catch(_){} TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); tbMsg("Nimeshindwa kucheza sauti. Jaribu tena.","sad"); } }
-async function afterTalk(){ TB.st="laugh"; micStyle(); musicDuck(false); setPose("talk_01"); await sleep(250);
-  if(Math.random()<0.65){ setPose("face_laugh"); const L=["Hehe! Sauti yako imekuwa ya kuchekesha!","Ha ha! Nimekuiga vizuri?","Hee hee! Tena tena!"]; bubShow(L[Math.floor(Math.random()*L.length)]); await sleep(1700); bub.style.opacity="0"; }
-  setPose("idle_01"); TB.st="idle"; lock=0; lastTouch=Date.now(); micStyle(); }
-function tbStop(){ try{ if(TB.st==="recording"){ recFinish(true); return; } if(TB.st==="talking"){ clearInterval(TB.anIv); try{ TB.play&&(TB.play.onended=null,TB.play.stop()); }catch(e){} try{ TB.pctx&&TB.pctx.close(); }catch(e){} TB.pctx=null; TB.play=null; bub.style.opacity="0"; TB.st="idle"; lock=0; musicDuck(false); micStyle(); setPose("idle_01"); } }catch(e){} }
-function init(){ mk(); mkMic(); setPose("idle_01"); setInterval(tick,260); window.addEventListener("resize",()=>{ place(); }); window.NenoHero={_tb:TB,_voice:funnyVoice,mic:micTap,tap:onTap,pose:()=>pose,shown:()=>shown,say,open:openDialog}; }
+  }catch(e){ try{ ctx&&ctx.close(); }catch(_){} stopLoop("Nimeshindwa kucheza sauti. Jaribu tena."); } }
+async function afterTalk(){ if(!TB.loop){ TB.st="idle"; micStyle(); return; } TB.st="laugh"; micStyle(); setPose("talk_01"); await sleep(250);
+  if(TB.loop&&Math.random()<0.55){ setPose("face_laugh"); const L=["Hehe! Sauti yako imekuwa ya kuchekesha!","Ha ha! Nimekuiga vizuri?","Hee hee! Tena tena!"]; bubShow(L[Math.floor(Math.random()*L.length)]); await sleep(1500); bub.style.opacity="0"; }
+  if(!TB.loop) return; setPose("idle_01"); await sleep(750); if(TB.loop){ TB.idleSince=Date.now(); segBegin(); } }
+function tbStop(){ try{ if(TB.loop||TB.st!=="idle") stopLoop(); }catch(e){} }
+function init(){ mk(); mkMic(); document.addEventListener("visibilitychange",()=>{ if(document.hidden) tbStop(); }); setPose("idle_01"); setInterval(tick,260); window.addEventListener("resize",()=>{ place(); }); window.NenoHero={_tb:TB,_voice:funnyVoice,mic:micTap,tap:onTap,pose:()=>pose,shown:()=>shown,say,open:openDialog}; }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init); else init();
 })();
 
