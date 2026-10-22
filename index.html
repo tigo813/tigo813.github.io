@@ -1155,7 +1155,7 @@
   }
   .game-fullscreen .board-zone .crossword-grid{ margin:0; }
 
-.hub::after{ content:"v19-2100"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
+.hub::after{ content:"v19-2110"; position:fixed; right:8px; top:46px; font:700 10px/1 sans-serif; color:rgba(255,255,255,.55); pointer-events:none; z-index:5; }
 /* ===== karıştır düğmesi: çember dışında (sağ alt köşe), harf seçimini engellemez ===== */
 #gameFullscreen #shuffleBtn.wheel-mini-btn{
   left:auto; top:auto; right:-13px; bottom:-15px; margin:0; width:40px; height:40px; z-index:6; padding:6px; box-sizing:border-box;
@@ -3439,7 +3439,7 @@ function renderEndScreen(stars){
 const CHEZA_BTN = "data:image/webp;base64,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";
 
 /* ================= SÜRÜM DAMGASI + ESKİ ÖNBELLEĞİ BİR KEZ TEMİZLE ================= */
-const NENO_BUILD = "v19-2100";
+const NENO_BUILD = "v19-2110";
 try{
   if(localStorage.getItem("neno_build") !== NENO_BUILD){
     localStorage.setItem("neno_build", NENO_BUILD);              // döngüyü önle: önce yaz
@@ -3898,7 +3898,7 @@ async function init(){
 init();
 </script>
 <script>
-/* ===== NENO MASCOT (v19-2100) — MascotController =====
+/* ===== NENO MASCOT (v19-2110) — MascotController =====
    Tek koşucu (runner): aynı anda tek animasyon. Öncelik: tap 5 > correct/wrong/complete 4 > ödül/ipucu 3 > karo/çark 2 > idle 1.
    Mascot katmanı pointer-events:none; dokunuşlar belgeden pasif dinlenir, oyun girdilerine hiç müdahale edilmez. */
 (function(){
@@ -4612,7 +4612,7 @@ async function idleStep(){
   if(now>nextBlink){ nextBlink=now+2400+Math.random()*3200; setPose("idle_02"); await sleep(140); if(!lock&&!dlg&&!sleeping) setPose("idle_01"); return; }
   if(now>nextLook){ nextLook=now+6000+Math.random()*7000; const p=["idle_03","idle_04","turn_left","turn_right"][Math.floor(Math.random()*4)]; setPose(p); await sleep(1300); if(!lock&&!dlg&&!sleeping) setPose("idle_01"); return; }
   if(now>nextSay){ nextSay=now+26000+Math.random()*16000; lock=1; try{ const NM=window.NenoMascot; const g=["gesture_wave","gesture_hips","gesture_shrug","gesture_thumbs","gesture_present"][Math.floor(Math.random()*5)]; setPose(g); const t=(NM&&NM._chat)?NM._chat():"Karibu tena!"; await say(t,["happy","curious","grin"][Math.floor(Math.random()*3)],3200); }catch(e){} lock=0; setPose("idle_01"); } }
-function autoMic(){ setTimeout(()=>{ try{ if(!shown||dlg||TB.loop||TB.muted) return; const c=getConsent(); if(c===1){ micTap(); } else if(c===null&&!TB.asked){ TB.asked=true; let n=0; const w=setInterval(()=>{ n++; if(!shown){ clearInterval(w); TB.asked=false; return; } if(!lock&&!dlg){ clearInterval(w); openDialog(null,consentTopic()); } else if(n>20) clearInterval(w); },500); } }catch(e){} },4200); }
+function autoMic(){ return; setTimeout(()=>{ try{ if(!shown||dlg||TB.loop||TB.muted) return; const c=getConsent(); if(c===1){ micTap(); } else if(c===null&&!TB.asked){ TB.asked=true; let n=0; const w=setInterval(()=>{ n++; if(!shown){ clearInterval(w); TB.asked=false; return; } if(!lock&&!dlg){ clearInterval(w); openDialog(null,consentTopic()); } else if(n>20) clearInterval(w); },500); } }catch(e){} },4200); }
 function tick(){ try{ const up=hubUp()&&place(); if(up&&!shown){ shown=true; root.style.opacity="1"; window.__NENO_HERO_ON=true; lastTouch=Date.now(); setPose(sleeping?"sleep":"idle_01"); if(!greeted){ greeted=true; setTimeout(greet,700); } autoMic(); }
     else if(!up&&shown){ tbStop(); shown=false; root.style.opacity="0"; bub.style.opacity="0"; dlgClose(); lock=0; sleeping=false; talkStop("idle_01"); }
     micPlace(); if(shown){ bubPlace(); dlgPlace(); } idleStep(); }catch(e){} }
@@ -4621,12 +4621,12 @@ function tick(){ try{ const up=hubUp()&&place(); if(up&&!shown){ shown=true; roo
 const TB={muted:false,asked:false,st:"idle",ctx:null,stream:null,proc:null,src:null,chunks:[],sr:48000,t0:0,speech:false,lastVoice:0,floor:0,iv:0,blinkIv:0,play:null,pctx:null,anIv:0,micBtn:null,xBtn:null,musicV:null};
 const PITCH=1.55, TEMPO=1.12, MAXMS=8000;
 
-function getConsent(){ try{ const v=localStorage.getItem("nenoMicConsent"); return v==="1"?1:v==="0"?0:null; }catch(e){ return null; } }
+function getConsent(){ return 0; try{ const v=localStorage.getItem("nenoMicConsent"); return v==="1"?1:v==="0"?0:null; }catch(e){ return null; } }
 function setConsent(v){ try{ localStorage.setItem("nenoMicConsent",String(v)); }catch(e){} }
 function consentTopic(){ return {id:"micconsent",q:"Nikusikilize na kurudia maneno yako kwa sauti ya kuchekesha? Sauti yako haihifadhiwi.",o:[{t:"Ndiyo, sikiliza",r:"Sawa! Ongea nami, nitarudia! Gusa mara mbili ili nikae kimya.",m:"joy",a:"wave",fn:()=>setConsent(1),then:()=>{ TB.muted=false; micTap(); }},{t:"Hapana",r:"Sawa, hakuna shida! Gusa mara mbili ukibadili mawazo.",m:"happy",fn:()=>setConsent(0)}]}; }
 let tapPend=null;
-function heroPointer(){ if(tapPend){ clearTimeout(tapPend); tapPend=null; doubleTap(); } else { tapPend=setTimeout(()=>{ tapPend=null; onTap(); },300); } }
-async function doubleTap(){ lastTouch=Date.now();
+function heroPointer(){ onTap(); return; if(tapPend){ clearTimeout(tapPend); tapPend=null; doubleTap(); } else { tapPend=setTimeout(()=>{ tapPend=null; onTap(); },300); } }
+async function doubleTap(){ return; lastTouch=Date.now();
   if(TB.loop){ TB.muted=true; stopLoop(); say("Sawa, nimenyamaza. Gusa mara mbili uniwashe tena.","happy",3000); return; }
   if(getConsent()!==1){ if(!lock&&!dlg) openDialog(null,consentTopic()); return; }
   TB.muted=false; micTap(); }
@@ -4638,8 +4638,8 @@ function mkMic(){
   const b=document.createElement("button"); b.id="nhMic"; b.setAttribute("aria-label","Ongea na Neno"); b.onclick=ev=>{ ev.stopPropagation(); micTap(); }; document.body.appendChild(b); TB.micBtn=b;
   const x=document.createElement("button"); x.id="nhMicX"; x.textContent="✕"; x.setAttribute("aria-label","Ghairi"); x.onclick=ev=>{ ev.stopPropagation(); stopLoop(); }; document.body.appendChild(x); TB.xBtn=x; micStyle(); }
 function micPlace(){ if(!rect||!TB.micBtn) return; const on=shown; TB.micBtn.style.display="none"; TB.xBtn.style.display="none"; if(!on) return; const bx=Math.max(8,rect.x-30), by=rect.top+rect.h-64; TB.micBtn.style.left=bx+"px"; TB.micBtn.style.top=by+"px"; TB.xBtn.style.left=(bx+40)+"px"; TB.xBtn.style.top=(by-22)+"px"; }
-function micTap(){ if(TB.loop){ stopLoop(); return; } if(TB.st!=="idle") return; if(dlg){ dlgClose(); lock=0; setPose("idle_01"); } if(lock){ let n=0; const w=setInterval(()=>{ n++; if(!lock&&TB.st==="idle"){ clearInterval(w); recStart(); } else if(n>24) clearInterval(w); },250); return; } recStart(); }
-async function recStart(){
+function micTap(){ return; /* sesli konuşma kaldırıldı */ if(TB.loop){ stopLoop(); return; } if(TB.st!=="idle") return; if(dlg){ dlgClose(); lock=0; setPose("idle_01"); } if(lock){ let n=0; const w=setInterval(()=>{ n++; if(!lock&&TB.st==="idle"){ clearInterval(w); recStart(); } else if(n>24) clearInterval(w); },250); return; } recStart(); }
+async function recStart(){ return;
   try{ if(typeof progress!=="undefined"&&progress.soundOn===false){ tbMsg("Washa sauti kwanza ili nikusikie!","curious"); return; } }catch(e){}
   if(lock||dlg){ return; } const AC=window.AudioContext||window.webkitAudioContext;
   if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!AC){ tbMsg("Kifaa hiki hakiungi maikrofoni.","sad"); return; }
