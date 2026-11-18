@@ -1,4 +1,4 @@
-// Neno servis çalışanı (v8)
+// Neno servis çalışanı (v9: tafuta/ klasörü desteği)
 // Amaçlar:
 //  1) Oyun ikinci açılıştan itibaren ANINDA açılsın (ana dosya cihazda saklı)
 //  2) Mobil veri HARCANMASIN: her açılışta 14 MB'lık dosyayı yeniden indirmek yerine
@@ -43,6 +43,16 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+
+  // Tafuta Neno (tafuta/ klasörü) kendi servis çalışanını kullanır: burada karışma.
+  if (url.pathname.startsWith("/tafuta/")) return;
+
+  // Ana oyun dışındaki sayfalar (privacy.html vb.): önce ağ, yoksa önbellek.
+  // (Yoksa servis çalışanı her sayfa yerine index.html'i açar.)
+  if (req.mode === "navigate" && url.pathname !== "/" && url.pathname !== "/index.html") {
+    event.respondWith(fetch(req).catch(() => caches.match(DOC_KEY)));
+    return;
+  }
 
   // Sayfa açılışı (uygulama başlangıcı)
   if (req.mode === "navigate") {

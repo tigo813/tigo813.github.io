@@ -1068,6 +1068,9 @@
 .hb-card.b .pr i{ background: linear-gradient(#5fc2ff, #1f6fcf); }
 .hb-card .pr span{ position: relative; z-index: 2; width: 100%; text-align: center; font-size: calc(var(--u) * 9.5px); font-weight: 800; text-shadow: 0 1px 2px #000; }
 .hb-card .pr img{ position: absolute; left: calc(var(--u) * -2px); top: 50%; transform: translateY(-50%); width: calc(var(--u) * 16px); z-index: 3; }
+.hb-card.hb-tafuta{ width: calc(var(--u) * 64px); padding: calc(var(--u) * 3px); }
+.hb-card.hb-tafuta .ph{ height: calc(var(--u) * 56px); }
+.hb-card.hb-tafuta .nm{ font-size: calc(var(--u) * 10px); }
 .hb-dots{ position: absolute; z-index: 5; left: 0; right: 0; top: calc(var(--u) * 738px); display: flex; justify-content: center; gap: calc(var(--u) * 7px); pointer-events: none; }
 .hb-dots i{ width: calc(var(--u) * 8px); height: calc(var(--u) * 8px); border-radius: 50%; background: rgba(255,255,255,.35); border: 1px solid rgba(0,0,0,.4); }
 .hb-dots i.on{ background: #ffd34d; }
@@ -3686,7 +3689,7 @@ function hbHomeHTML(){
   const side = (id, img, extra, badge) => `<div class="hb-side hb-btn ${extra || ""}" id="${id}"><img class="m" src="${HUB[img]}" alt="">${badge ? `<div class="hb-badge">${badge}</div>` : ""}</div>`;
   return `
     <img class="hb-logo" src="${HUB.logo}" alt="NENO">
-    <div class="hb-col l">${side("hbZaw", "zawadi", "", b.zaw || "")}${side("hbShu", "shughuli", "", b.tasks ? "!" : "")}</div>
+    <div class="hb-col l">${side("hbZaw", "zawadi", "", b.zaw || "")}${side("hbShu", "shughuli", "", b.tasks ? "!" : "")}${hbTafutaCard()}</div>
     <div class="hb-col r">${side("hbSet", "mipangilio")}${side("hbSnd", "sauti", sndOff ? "off" : "")}${side("hbLng", "lugha")}${side("hbDuk", "duka")}</div>
     <div class="hb-play" id="hbPlay"><img class="hb-play-board" src="${HUB.cheza}" alt="CHEZA"><button class="hb-play-hit" id="hbPlayHit" aria-label="Cheza"></button><img class="hb-play-btn" src="${CHEZA_BTN}" alt=""></div>
     <div class="hb-lvl">Kiwango ${Math.min(f, totalLevels() - 1) + 1}</div>
@@ -3696,6 +3699,10 @@ function hbHomeHTML(){
       <img class="hb-arr hb-btn ${hbRegionStart + 3 >= regionCount() ? "dis" : ""}" id="hbNext" src="${HUB.next}" alt="">
     </div>
     <div class="hb-dots">${[0, 1, 2].map(i => `<i class="${hbRegionStart + i === cur ? "on" : ""}"></i>`).join("")}</div>`;
+}
+/* — Tafuta Neno (kelime avı) kartı: ayrı oyun tafuta.html — */
+function hbTafutaCard(){
+  return `<div class="hb-card hb-tafuta" id="hbTafuta"><div class="ph"><img src="tafuta/icon-192.png" alt=""></div><div class="nm">TAFUTA<br>NENO</div></div>`;
 }
 function hbRegionCard(r, curRegion){
   if(r >= regionCount()) return `<div class="hb-card lk" style="visibility:hidden"><div class="ph"></div></div>`;
@@ -3727,6 +3734,7 @@ function hbHomeBind(){
   });
   hbPress(document.getElementById("hbLng"), () => hbModal("Lugha", `<div class="hb-panel" style="margin:0"><div class="hb-row"><div class="tx"><b>Kiswahili</b><small>Lugha ya mchezo kwa sasa. Lugha zaidi zinakuja hivi karibuni.</small></div></div></div>`));
   hbPress(document.getElementById("hbDuk"), hbShop);
+  hbPress(document.getElementById("hbTafuta"), () => { stopMenuAmbience(); location.href = "tafuta/"; }, sfxSelectTap);
 }
 
 /* — Ramani — */
