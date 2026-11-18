@@ -1068,9 +1068,16 @@
 .hb-card.b .pr i{ background: linear-gradient(#5fc2ff, #1f6fcf); }
 .hb-card .pr span{ position: relative; z-index: 2; width: 100%; text-align: center; font-size: calc(var(--u) * 9.5px); font-weight: 800; text-shadow: 0 1px 2px #000; }
 .hb-card .pr img{ position: absolute; left: calc(var(--u) * -2px); top: 50%; transform: translateY(-50%); width: calc(var(--u) * 16px); z-index: 3; }
-.hb-card.hb-tafuta{ width: calc(var(--u) * 64px); padding: calc(var(--u) * 3px); }
-.hb-card.hb-tafuta .ph{ height: calc(var(--u) * 56px); }
-.hb-card.hb-tafuta .nm{ font-size: calc(var(--u) * 10px); }
+.hb-tafuta{ position: absolute; z-index: 6; left: 50%; top: calc(var(--u) * 404px); transform: translateX(-50%);
+  display: flex; align-items: center; gap: calc(var(--u) * 7px); cursor: pointer;
+  padding: calc(var(--u) * 4px) calc(var(--u) * 14px) calc(var(--u) * 4px) calc(var(--u) * 5px);
+  border-radius: 999px; border: calc(var(--u) * 2.5px) solid #efb64f;
+  background: linear-gradient(180deg, #3f8f49, #1f4d2b);
+  box-shadow: 0 calc(var(--u) * 4px) 0 #123a1d, 0 calc(var(--u) * 7px) calc(var(--u) * 10px) rgba(0,0,0,.45);
+  font-family: inherit; }
+.hb-tafuta svg{ display: block; width: calc(var(--u) * 34px); height: calc(var(--u) * 34px); border-radius: 50%; border: calc(var(--u) * 2px) solid #ffe9b8; background: #fff6dc; }
+.hb-tafuta span{ font-size: calc(var(--u) * 15px); font-weight: 900; letter-spacing: .04em; color: #ffe9b8; text-shadow: 0 calc(var(--u) * 2px) calc(var(--u) * 2px) #000; }
+.hb-tafuta:active{ transform: translateX(-50%) translateY(calc(var(--u) * 3px)); box-shadow: 0 calc(var(--u) * 1px) 0 #123a1d; }
 .hb-dots{ position: absolute; z-index: 5; left: 0; right: 0; top: calc(var(--u) * 738px); display: flex; justify-content: center; gap: calc(var(--u) * 7px); pointer-events: none; }
 .hb-dots i{ width: calc(var(--u) * 8px); height: calc(var(--u) * 8px); border-radius: 50%; background: rgba(255,255,255,.35); border: 1px solid rgba(0,0,0,.4); }
 .hb-dots i.on{ background: #ffd34d; }
@@ -3689,8 +3696,9 @@ function hbHomeHTML(){
   const side = (id, img, extra, badge) => `<div class="hb-side hb-btn ${extra || ""}" id="${id}"><img class="m" src="${HUB[img]}" alt="">${badge ? `<div class="hb-badge">${badge}</div>` : ""}</div>`;
   return `
     <img class="hb-logo" src="${HUB.logo}" alt="NENO">
-    <div class="hb-col l">${side("hbZaw", "zawadi", "", b.zaw || "")}${side("hbShu", "shughuli", "", b.tasks ? "!" : "")}${hbTafutaCard()}</div>
+    <div class="hb-col l">${side("hbZaw", "zawadi", "", b.zaw || "")}${side("hbShu", "shughuli", "", b.tasks ? "!" : "")}</div>
     <div class="hb-col r">${side("hbSet", "mipangilio")}${side("hbSnd", "sauti", sndOff ? "off" : "")}${side("hbLng", "lugha")}${side("hbDuk", "duka")}</div>
+    ${hbTafutaBtn()}
     <div class="hb-play" id="hbPlay"><img class="hb-play-board" src="${HUB.cheza}" alt="CHEZA"><button class="hb-play-hit" id="hbPlayHit" aria-label="Cheza"></button><img class="hb-play-btn" src="${CHEZA_BTN}" alt=""></div>
     <div class="hb-lvl">Kiwango ${Math.min(f, totalLevels() - 1) + 1}</div>
     <div class="hb-reg">
@@ -3701,8 +3709,14 @@ function hbHomeHTML(){
     <div class="hb-dots">${[0, 1, 2].map(i => `<i class="${hbRegionStart + i === cur ? "on" : ""}"></i>`).join("")}</div>`;
 }
 /* — Tafuta Neno (kelime avı) kartı: ayrı oyun tafuta.html — */
-function hbTafutaCard(){
-  return `<div class="hb-card hb-tafuta" id="hbTafuta"><div class="ph"><img src="tafuta/icon-192.png" alt=""></div><div class="nm">TAFUTA<br>NENO</div></div>`;
+function hbTafutaBtn(){
+  const L = [["N", 13, 16], ["E", 27, 16], ["N", 13, 31], ["O", 27, 31]];
+  const ic = `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="20" cy="20" r="19" fill="#fff6dc"/>
+    ${L.map(([ch, x, y]) => `<text x="${x}" y="${y}" font-size="12" font-weight="900" fill="#2e6b3a" text-anchor="middle" font-family="Arial">${ch}</text>`).join("")}
+    <circle cx="22" cy="21" r="8.5" fill="rgba(168,216,78,.28)" stroke="#d99a1e" stroke-width="3.2"/>
+    <line x1="28" y1="27" x2="32" y2="31" stroke="#d99a1e" stroke-width="4.2" stroke-linecap="round"/></svg>`;
+  return `<button class="hb-tafuta" id="hbTafuta">${ic}<span>TAFUTA NENO</span></button>`;
 }
 function hbRegionCard(r, curRegion){
   if(r >= regionCount()) return `<div class="hb-card lk" style="visibility:hidden"><div class="ph"></div></div>`;
